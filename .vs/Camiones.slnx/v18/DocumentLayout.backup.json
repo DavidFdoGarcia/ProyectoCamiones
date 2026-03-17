@@ -1,22 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\",
+  "WorkspaceRootPath": "C:\\Users\\PC\\Desktop\\ProyectoCamiones\\ProyectoCamiones\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|c:\\users\\david\\desktop\\proyectocamiones_real\\camiones\\camiones\\operadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|c:\\users\\pc\\desktop\\proyectocamiones\\proyectocamiones\\camiones\\operadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|solutionrelative:camiones\\operadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|c:\\users\\david\\desktop\\proyectocamiones_real\\camiones\\camiones\\altacamiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|solutionrelative:camiones\\altacamiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|C:\\Users\\PC\\Desktop\\ProyectoCamiones\\ProyectoCamiones\\camiones\\operadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|solutionrelative:camiones\\operadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|c:\\users\\david\\desktop\\proyectocamiones_real\\camiones\\camiones\\altacamiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|C:\\Users\\PC\\Desktop\\ProyectoCamiones\\ProyectoCamiones\\camiones\\altacamiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|solutionrelative:camiones\\altacamiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\camiones\\operadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|solutionrelative:camiones\\operadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|c:\\users\\pc\\desktop\\proyectocamiones\\proyectocamiones\\camiones\\operadores.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|solutionrelative:camiones\\operadores.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|c:\\users\\pc\\desktop\\proyectocamiones\\proyectocamiones\\camiones\\altacamiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|solutionrelative:camiones\\altacamiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|c:\\users\\pc\\desktop\\proyectocamiones\\proyectocamiones\\camiones\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|solutionrelative:camiones\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|c:\\users\\pc\\desktop\\proyectocamiones\\proyectocamiones\\camiones\\base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|solutionrelative:camiones\\base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,15 +38,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "Operadores.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\ProyectoCamiones\\ProyectoCamiones\\Camiones\\Operadores.Designer.cs",
+              "RelativeDocumentMoniker": "Camiones\\Operadores.Designer.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\ProyectoCamiones\\ProyectoCamiones\\Camiones\\Operadores.Designer.cs",
+              "RelativeToolTip": "Camiones\\Operadores.Designer.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAAAJIAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T18:06:52.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "AltaCamiones.cs",
-              "DocumentMoniker": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\AltaCamiones.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\ProyectoCamiones\\ProyectoCamiones\\Camiones\\AltaCamiones.cs",
               "RelativeDocumentMoniker": "Camiones\\AltaCamiones.cs",
-              "ToolTip": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\AltaCamiones.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\ProyectoCamiones\\ProyectoCamiones\\Camiones\\AltaCamiones.cs",
               "RelativeToolTip": "Camiones\\AltaCamiones.cs",
               "ViewState": "AgIAADUAAAAAAAAAAAAAAD4AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -45,9 +74,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "AltaCamiones.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\AltaCamiones.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\ProyectoCamiones\\ProyectoCamiones\\Camiones\\AltaCamiones.cs",
               "RelativeDocumentMoniker": "Camiones\\AltaCamiones.cs",
-              "ToolTip": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\AltaCamiones.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\ProyectoCamiones\\ProyectoCamiones\\Camiones\\AltaCamiones.cs [Dise\u00F1o]",
               "RelativeToolTip": "Camiones\\AltaCamiones.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-17T03:25:39.561Z",
@@ -57,25 +86,50 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Operadores.cs",
-              "DocumentMoniker": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\Operadores.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\ProyectoCamiones\\ProyectoCamiones\\Camiones\\Operadores.cs",
               "RelativeDocumentMoniker": "Camiones\\Operadores.cs",
-              "ToolTip": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\Operadores.cs*",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\ProyectoCamiones\\ProyectoCamiones\\Camiones\\Operadores.cs*",
               "RelativeToolTip": "Camiones\\Operadores.cs*",
-              "ViewState": "AgIAALoAAAAAAAAAAAAAALoAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAPsAAAAAAAAAAAAAAAcBAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-17T03:21:40.147Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Operadores.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\Operadores.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\ProyectoCamiones\\ProyectoCamiones\\Camiones\\Operadores.cs",
               "RelativeDocumentMoniker": "Camiones\\Operadores.cs",
-              "ToolTip": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\Operadores.cs [Dise\u00F1o]*",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\ProyectoCamiones\\ProyectoCamiones\\Camiones\\Operadores.cs [Dise\u00F1o]*",
               "RelativeToolTip": "Camiones\\Operadores.cs [Dise\u00F1o]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-17T00:10:36.376Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\ProyectoCamiones\\ProyectoCamiones\\Camiones\\Program.cs",
+              "RelativeDocumentMoniker": "Camiones\\Program.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\ProyectoCamiones\\ProyectoCamiones\\Camiones\\Program.cs",
+              "RelativeToolTip": "Camiones\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T16:07:06.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Base.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\ProyectoCamiones\\ProyectoCamiones\\Camiones\\Base.cs",
+              "RelativeDocumentMoniker": "Camiones\\Base.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\ProyectoCamiones\\ProyectoCamiones\\Camiones\\Base.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Camiones\\Base.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T16:18:13.943Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]
