@@ -25,55 +25,55 @@ namespace Camiones
 
         private void btnLicencia_Click(object sender, EventArgs e)
         {
-            Clsoperador.SubirDoumento(txtID.Text);
+           // Clsoperador.SubirDoumento(txtID.Text);
         }
 
 
         private void btnApto_Click(object sender, EventArgs e)
         {
-            Clsoperador.SubirDoumento(txtID.Text);
+           // Clsoperador.SubirDoumento(txtID.Text);
         }
 
         private void btnComprobante_Click(object sender, EventArgs e)
         {
-            Clsoperador.SubirDoumento(txtID.Text);
+           // Clsoperador.SubirDoumento(txtID.Text);
         }
 
         private void btnINE_Click(object sender, EventArgs e)
         {
-            Clsoperador.SubirDoumento(txtID.Text);
+           // Clsoperador.SubirDoumento(txtID.Text);
         }
 
         private void btnCURP_Click(object sender, EventArgs e)
         {
-            Clsoperador.SubirDoumento(txtID.Text);
+            Clsoperador.SubirDoumento(txtID.Text, txtURLcurp);
         }
 
         private void btnAnti_Click(object sender, EventArgs e)
         {
 
 
-            Clsoperador.SubirDoumento(txtID.Text);
+            //Clsoperador.SubirDoumento(txtID.Text);
         }
 
        private void btnContrato_Click(object sender, EventArgs e)
         {
-           Clsoperador.SubirDoumento(txtID.Text);
+           //Clsoperador.SubirDoumento(txtID.Text);
         }
 
         private void btnCondiciones_Click(object sender, EventArgs e)
         {
-            Clsoperador.SubirDoumento(txtID.Text);
+            //Clsoperador.SubirDoumento(txtID.Text);
         }
 
         private void btnCapacitaciones_Click(object sender, EventArgs e)
         {
-           Clsoperador.SubirDoumento(txtID.Text);
+           //Clsoperador.SubirDoumento(txtID.Text);
         }
 
         private void btnViajes_Click(object sender, EventArgs e)
         {
-           Clsoperador.SubirDoumento(txtID.Text);
+           //Clsoperador.SubirDoumento(txtID.Text);
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -173,7 +173,7 @@ namespace Camiones
 
         private void btnFoto_Click(object sender, EventArgs e)
         {
-            Clsoperador.SubirFoto(txtID.Text, pictureBox1);
+            Clsoperador.SubirFoto(txtID.Text, pictureBox1, txtURLimagen);
         }
     
 

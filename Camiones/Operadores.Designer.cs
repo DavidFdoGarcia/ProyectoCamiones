@@ -769,7 +769,6 @@
             txtURLimagen.Name = "txtURLimagen";
             txtURLimagen.Size = new Size(113, 31);
             txtURLimagen.TabIndex = 56;
-            txtURLimagen.Visible = false;
             // 
             // txtURLcapacitaciones
             // 
@@ -814,6 +813,7 @@
             txtURLcurp.Name = "txtURLcurp";
             txtURLcurp.Size = new Size(113, 31);
             txtURLcurp.TabIndex = 61;
+            txtURLcurp.TabStop = false;
             txtURLcurp.Visible = false;
             // 
             // txtURLine
