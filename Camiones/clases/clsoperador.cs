@@ -84,7 +84,7 @@ namespace Camiones.clases
                 }
             }
         }
-        public static void SubirFoto(string idcliente, PictureBox picFoto)
+        public static void SubirFoto(string idcliente, PictureBox picFoto)  //Reemplazar foto
         {
             OpenFileDialog abrir = new OpenFileDialog();
             abrir.Filter = "Imagenes|*.jpg;*.png;*.jpeg";

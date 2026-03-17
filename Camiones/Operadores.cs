@@ -56,9 +56,9 @@ namespace Camiones
             Clsoperador.SubirDoumento(txtID.Text);
         }
 
-        private void btnContrato_Click(object sender, EventArgs e)
+       private void btnContrato_Click(object sender, EventArgs e)
         {
-            Clsoperador.SubirDoumento(txtID.Text);
+           Clsoperador.SubirDoumento(txtID.Text);
         }
 
         private void btnCondiciones_Click(object sender, EventArgs e)
@@ -68,12 +68,12 @@ namespace Camiones
 
         private void btnCapacitaciones_Click(object sender, EventArgs e)
         {
-            Clsoperador.SubirDoumento(txtID.Text);
+           Clsoperador.SubirDoumento(txtID.Text);
         }
 
         private void btnViajes_Click(object sender, EventArgs e)
         {
-            Clsoperador.SubirDoumento(txtID.Text);
+           Clsoperador.SubirDoumento(txtID.Text);
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)

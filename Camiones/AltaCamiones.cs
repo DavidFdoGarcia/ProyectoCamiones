@@ -18,7 +18,7 @@ namespace Camiones
         public AltaCamiones()
         {
             InitializeComponent();
-            
+
         }
 
         private void AltaCamiones_Load(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace Camiones
                 txtCamion.Clear();
                 txtCamion.Focus();
                 dgConsulta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            } 
+            }
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -82,7 +82,7 @@ namespace Camiones
 
                 DataTable dt = Consultas.Consultar(query);
 
-               
+
 
 
                 dgConsulta.DataSource = null;
@@ -192,7 +192,35 @@ namespace Camiones
                 txtCamion.Text = "";
                 dgConsulta.DataSource = Consultas.Consultar("SELECT * FROM dbo.camion");
             }
-            
-        } 
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string query = @"SELECT * 
+                         FROM dbo.camion
+                         WHERE tipocamion LIKE @buscar";
+
+                var parametros = new Dictionary<string, object>()
+        {
+            { "@buscar", "%" + txtBuscar.Text + "%" }
+        };
+
+                DataTable dt = Consultas.Consultar(query, parametros);
+
+                dgConsulta.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

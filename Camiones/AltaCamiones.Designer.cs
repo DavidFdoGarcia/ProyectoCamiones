@@ -34,6 +34,7 @@
             Evacio = new ErrorProvider(components);
             dgConsulta = new DataGridView();
             txtId = new TextBox();
+            txtBuscar = new TextBox();
             ((System.ComponentModel.ISupportInitialize)Evacio).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgConsulta).BeginInit();
             SuspendLayout();
@@ -67,11 +68,17 @@
             btnActualizar.Margin = new Padding(6, 8, 6, 8);
             btnActualizar.Click += btnActualizar_Click;
             // 
+            // btnBuscar
+            // 
+            btnBuscar.Location = new Point(706, 130);
+            btnBuscar.Size = new Size(208, 48);
+            btnBuscar.Click += btnBuscar_Click;
+            // 
             // lblTipo
             // 
             lblTipo.AutoSize = true;
             lblTipo.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTipo.Location = new Point(53, 120);
+            lblTipo.Location = new Point(50, 43);
             lblTipo.Margin = new Padding(4, 0, 4, 0);
             lblTipo.Name = "lblTipo";
             lblTipo.Size = new Size(235, 36);
@@ -80,7 +87,7 @@
             // 
             // txtCamion
             // 
-            txtCamion.Location = new Point(299, 122);
+            txtCamion.Location = new Point(326, 48);
             txtCamion.Margin = new Padding(4, 5, 4, 5);
             txtCamion.Name = "txtCamion";
             txtCamion.Size = new Size(485, 31);
@@ -94,7 +101,7 @@
             // dgConsulta
             // 
             dgConsulta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgConsulta.Location = new Point(53, 222);
+            dgConsulta.Location = new Point(41, 210);
             dgConsulta.Margin = new Padding(4, 5, 4, 5);
             dgConsulta.Name = "dgConsulta";
             dgConsulta.ReadOnly = true;
@@ -106,18 +113,28 @@
             // 
             // txtId
             // 
-            txtId.Location = new Point(879, 127);
+            txtId.Location = new Point(879, 48);
             txtId.Margin = new Padding(4, 5, 4, 5);
             txtId.Name = "txtId";
             txtId.Size = new Size(65, 31);
             txtId.TabIndex = 6;
             txtId.Visible = false;
             // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(50, 145);
+            txtBuscar.Margin = new Padding(4, 5, 4, 5);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(569, 31);
+            txtBuscar.TabIndex = 7;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
+            // 
             // AltaCamiones
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1293, 833);
+            Controls.Add(txtBuscar);
             Controls.Add(txtId);
             Controls.Add(dgConsulta);
             Controls.Add(txtCamion);
@@ -126,15 +143,17 @@
             Name = "AltaCamiones";
             Text = "Alta de Camiones";
             Load += AltaCamiones_Load;
+            Controls.SetChildIndex(lblTipo, 0);
+            Controls.SetChildIndex(txtCamion, 0);
+            Controls.SetChildIndex(dgConsulta, 0);
+            Controls.SetChildIndex(txtId, 0);
+            Controls.SetChildIndex(txtBuscar, 0);
+            Controls.SetChildIndex(btnBuscar, 0);
             Controls.SetChildIndex(btnActualizar, 0);
             Controls.SetChildIndex(btnBaja, 0);
             Controls.SetChildIndex(btnConsultar, 0);
             Controls.SetChildIndex(btnSalir, 0);
             Controls.SetChildIndex(btnInsertar, 0);
-            Controls.SetChildIndex(lblTipo, 0);
-            Controls.SetChildIndex(txtCamion, 0);
-            Controls.SetChildIndex(dgConsulta, 0);
-            Controls.SetChildIndex(txtId, 0);
             ((System.ComponentModel.ISupportInitialize)Evacio).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgConsulta).EndInit();
             ResumeLayout(false);
@@ -148,5 +167,6 @@
         private ErrorProvider Evacio;
         private DataGridView dgConsulta;
         private TextBox txtId;
+        private TextBox txtBuscar;
     }
 }
