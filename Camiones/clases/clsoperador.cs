@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace Camiones.clases
@@ -84,5 +85,48 @@ namespace Camiones.clases
                 txtRuta.Text = destino;
             }
         }
+
+        public static void GuardarCapacitacion(string idCliente, string rutaArchivoOrigen)
+        { /*
+            try
+            {
+                // Escritorio
+                string escritorio = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                // Carpeta base
+                string rutaBase = Path.Combine(escritorio, "DocumentosClientes");
+
+                // Carpeta del cliente
+                string carpetaCliente = Path.Combine(rutaBase, idCliente);
+
+                // Carpeta de capacitaciones
+                string carpetaCapacitaciones = Path.Combine(carpetaCliente, "Capacitaciones");
+
+                // Crear carpetas si no existen
+                Directory.CreateDirectory(carpetaCapacitaciones);
+
+                // Nombre original
+                string nombreArchivo = Path.GetFileNameWithoutExtension(rutaArchivoOrigen);
+                string extension = Path.GetExtension(rutaArchivoOrigen);
+
+                // Nombre único (evita duplicados)
+                string nuevoNombre = $"{nombreArchivo}_{DateTime.Now:yyyyMMdd_HHmmss}{extension}";
+
+                // Ruta final
+                string destino = Path.Combine(carpetaCapacitaciones, nuevoNombre);
+
+                // Copiar archivo
+                File.Copy(rutaArchivoOrigen, destino, true);
+
+                MessageBox.Show("Capacitación guardada correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar la capacitación: " + ex.Message);
+            } */
+
+
+        }
+
     }
     }

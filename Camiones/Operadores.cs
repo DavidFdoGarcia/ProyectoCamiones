@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.IO;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -30,23 +31,23 @@ namespace Camiones
 
         private void btnLicencia_Click(object sender, EventArgs e)
         {
-            // Clsoperador.SubirDoumento(txtID.Text);
+            Clsoperador.SubirDoumento(txtID.Text, txtURLlicencia);
         }
 
 
         private void btnApto_Click(object sender, EventArgs e)
         {
-            // Clsoperador.SubirDoumento(txtID.Text);
+            // Clsoperador.SubirDoumento(txtID.Text,txtapto);
         }
 
         private void btnComprobante_Click(object sender, EventArgs e)
         {
-            // Clsoperador.SubirDoumento(txtID.Text);
+            Clsoperador.SubirDoumento(txtID.Text, txtDomicilio);
         }
 
         private void btnINE_Click(object sender, EventArgs e)
         {
-            // Clsoperador.SubirDoumento(txtID.Text);
+            Clsoperador.SubirDoumento(txtID.Text, txtINE);
         }
 
         private void btnCURP_Click(object sender, EventArgs e)
@@ -58,7 +59,7 @@ namespace Camiones
         {
 
 
-            //Clsoperador.SubirDoumento(txtID.Text);
+            // Clsoperador.SubirDoumento(txtID.Text);
         }
 
         private void btnContrato_Click(object sender, EventArgs e)
@@ -78,7 +79,7 @@ namespace Camiones
 
         private void btnViajes_Click(object sender, EventArgs e)
         {
-            //Clsoperador.SubirDoumento(txtID.Text);
+            // Clsoperador.SubirDoumento(txtID.Text);
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -216,8 +217,8 @@ namespace Camiones
             }
         }
 
-    
-          
+
+
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
@@ -231,6 +232,9 @@ namespace Camiones
                     imagenBytes = ms.ToArray();
                 }
             }
+            // Resultado de antidoping desde RadioButton
+            string resultadoAntidoping = rdbAntiSI.Checked ? "✅ Aprobado" : "❌ No aprobado";
+
 
             // 2️⃣ Crear PDF
             var documento = Document.Create(container =>
@@ -258,10 +262,11 @@ namespace Camiones
                                 innerColumn.Item().Text($"Nombre: {txtNombre.Text}");
                                 innerColumn.Item().Text($"Apellido Paterno: {txtPaterno.Text}");
                                 innerColumn.Item().Text($"Apellido Materno: {txtMaterno.Text}");
+                                innerColumn.Item().Text($"Antidoping: {resultadoAntidoping}");
                             });
-                              // Espacio entre columnas
-                                    row.ConstantItem(20); // Esto crea un "espaciador" de 20 puntos entre datos y foto
-                       
+                            // Espacio entre columnas
+                            row.ConstantItem(20); // Esto crea un "espaciador" de 20 puntos entre datos y foto
+
                             // Foto a la derecha    
                             if (imagenBytes != null)
                             {
@@ -276,22 +281,22 @@ namespace Camiones
                                 });
                             }
 
-                          
-                                /*
-                                // Antidoping con ✅/❌
-                                string resultado = txtAntidoping.Text == "Aprobado" ? "✅ Aprobado" : "❌ No aprobado";
-                                innerColumn.Item().Text($"Antidoping: {resultado}");
 
-                                innerColumn.Item().Text($"Licencia: {txtLicencia.Text}");
-                                innerColumn.Item().Text($"CURP: {TXTcurp.Text}");
-                                innerColumn.Item().Text($"Comprobante Domicilio: {txtDomicilio.Text}");
-                                innerColumn.Item().Text($"Contrato Laboral: {txtContrato.Text}");
-                                innerColumn.Item().Text($"Condiciones: {txtCondiciones.Text}");
-                                innerColumn.Item().Text($"Capacitaciones: {txtCapacitaciones.Text}");
-                                innerColumn.Item().Text($"Viajes: {txtViajes.Text}"); */
-                            });
+                            /*
+                            // Antidoping con ✅/❌
+                            string resultado = txtAntidoping.Text == "Aprobado" ? "✅ Aprobado" : "❌ No aprobado";
+                            innerColumn.Item().Text($"Antidoping: {resultado}");
+
+                            innerColumn.Item().Text($"Licencia: {txtLicencia.Text}");
+                            innerColumn.Item().Text($"CURP: {TXTcurp.Text}");
+                            innerColumn.Item().Text($"Comprobante Domicilio: {txtDomicilio.Text}");
+                            innerColumn.Item().Text($"Contrato Laboral: {txtContrato.Text}");
+                            innerColumn.Item().Text($"Condiciones: {txtCondiciones.Text}");
+                            innerColumn.Item().Text($"Capacitaciones: {txtCapacitaciones.Text}");
+                            innerColumn.Item().Text($"Viajes: {txtViajes.Text}"); */
                         });
-                    
+                    });
+
 
                     // Pie de página
                     page.Footer().AlignCenter().Text($"Fecha: {DateTime.Now.ToShortDateString()}");
@@ -310,8 +315,98 @@ namespace Camiones
 
             MessageBox.Show($"PDF generado correctamente en: {rutaCompleta}");
         }
+
+        private void CargarFotoPorID(string id)
+        {
+            // Carpeta base donde están todas las carpetas de clientes
+            string carpetaBase = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "DocumentosClientes");
+
+            // Carpeta del cliente específico
+            string carpetaCliente = Path.Combine(carpetaBase, id);
+
+            if (!Directory.Exists(carpetaCliente))
+            {
+                MessageBox.Show($"No se encontró la carpeta del cliente con ID {id}.");
+                pictureBox1.Image = null;
+                return;
+            }
+
+            // Buscar cualquier archivo de imagen dentro de la carpeta del cliente
+            string[] imagenes = Directory.GetFiles(carpetaCliente)
+                .Where(f => f.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
+                            f.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase) ||
+                            f.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
+                .ToArray();
+
+            if (imagenes.Length > 0)
+            {
+                // Cargar la primera imagen encontrada en el PictureBox
+                pictureBox1.Image = System.Drawing.Image.FromFile(imagenes[0]);
+            }
+            else
+            {
+                MessageBox.Show($"No se encontró ninguna foto en la carpeta del cliente con ID {id}.");
+                pictureBox1.Image = null;
+            }
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM operador WHERE idoperador = @id";
+
+            Dictionary<string, object> parametros = new Dictionary<string, object>()
+    {
+        { "@id", txtID.Text }
+    };
+
+            DataTable dt = Consultas.Consultar(query, parametros);
+
+            if (dt.Rows.Count > 0)
+            {
+                txtNombre.Text = dt.Rows[0]["nombreoperador"].ToString();
+                txtPaterno.Text = dt.Rows[0]["apellidopoperador"].ToString();
+                txtMaterno.Text = dt.Rows[0]["apellidomoperador"].ToString();
+                txtINE.Text = dt.Rows[0]["licencia"].ToString();
+                TXTcurp.Text = dt.Rows[0]["curp"].ToString();
+                txtDomicilio.Text = dt.Rows[0]["comprobantedomicilio"].ToString();
+            }
+            else
+            {
+                MessageBox.Show("No se encontró el registro.");
+            }
+            CargarFotoPorID(txtID.Text);
+        }
+
+        private void btnCapacitacion_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog abrir = new OpenFileDialog())
+            {
+                if (abrir.ShowDialog() == DialogResult.OK)
+                {
+                    Clsoperador.GuardarCapacitacion(txtID.Text, abrir.FileName);
+                }
+            }
+            string query = @"UPDATE dbo.operador
+                         SET capacitaciones = @capacitacion
+                         WHERE idoperador = @id";
+
+            var parametros = new Dictionary<string, object>()
+        {
+            { "@capacitacion", txtNumeroCapacitaciones.Text },
+            { "@id", txtID.Text }
+        };
+
+            int filas = Consultas.Ejecutar(query, parametros);
+
+            if (filas > 0)
+            {
+                MessageBox.Show("Registro actualizado correctamente");
+
+            }
+        }
     }
-}
+    }
+
 
 
 

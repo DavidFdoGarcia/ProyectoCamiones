@@ -94,6 +94,8 @@
             txtURLdomicilio = new TextBox();
             txtURLapto = new TextBox();
             txtURLviajes = new TextBox();
+            btnCapacitacion = new Button();
+            txtNumeroCapacitaciones = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -122,6 +124,7 @@
             btnConsultar.Location = new Point(747, 375);
             btnConsultar.Margin = new Padding(4, 5, 4, 5);
             btnConsultar.Size = new Size(114, 32);
+            btnConsultar.Click += btnConsultar_Click;
             // 
             // btnBaja
             // 
@@ -724,6 +727,7 @@
             // 
             txtURLcapacitaciones.Location = new Point(558, 541);
             txtURLcapacitaciones.Name = "txtURLcapacitaciones";
+            txtURLcapacitaciones.PlaceholderText = "url";
             txtURLcapacitaciones.Size = new Size(80, 23);
             txtURLcapacitaciones.TabIndex = 57;
             txtURLcapacitaciones.Visible = false;
@@ -793,6 +797,25 @@
             txtURLviajes.TabIndex = 65;
             txtURLviajes.Visible = false;
             // 
+            // btnCapacitacion
+            // 
+            btnCapacitacion.Location = new Point(787, 586);
+            btnCapacitacion.Name = "btnCapacitacion";
+            btnCapacitacion.Size = new Size(124, 41);
+            btnCapacitacion.TabIndex = 36;
+            btnCapacitacion.Text = "Subir Capacitacion";
+            btnCapacitacion.UseVisualStyleBackColor = true;
+            btnCapacitacion.Click += btnCapacitacion_Click;
+            // 
+            // txtNumeroCapacitaciones
+            // 
+            txtNumeroCapacitaciones.Location = new Point(659, 537);
+            txtNumeroCapacitaciones.Name = "txtNumeroCapacitaciones";
+            txtNumeroCapacitaciones.PlaceholderText = "numero capacitaciones";
+            txtNumeroCapacitaciones.Size = new Size(80, 23);
+            txtNumeroCapacitaciones.TabIndex = 66;
+            txtNumeroCapacitaciones.Visible = false;
+            // 
             // Operadores
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -800,6 +823,8 @@
             BackColor = SystemColors.MenuBar;
             BackgroundImage = Properties.Resources.istockphoto_1465157700_612x612;
             ClientSize = new Size(1047, 651);
+            Controls.Add(txtNumeroCapacitaciones);
+            Controls.Add(btnCapacitacion);
             Controls.Add(txtURLviajes);
             Controls.Add(txtURLapto);
             Controls.Add(txtURLdomicilio);
@@ -897,6 +922,8 @@
             Controls.SetChildIndex(btnBaja, 0);
             Controls.SetChildIndex(btnActualizar, 0);
             Controls.SetChildIndex(btnSalir, 0);
+            Controls.SetChildIndex(btnCapacitacion, 0);
+            Controls.SetChildIndex(txtNumeroCapacitaciones, 0);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -984,5 +1011,7 @@
         private TextBox txtURLdomicilio;
         private TextBox txtURLapto;
         private TextBox txtURLviajes;
+        private Button btnCapacitacion;
+        private TextBox txtNumeroCapacitaciones;
     }
 }
