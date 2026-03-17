@@ -115,6 +115,7 @@
             btnInsertar.Location = new Point(1146, 792);
             btnInsertar.Margin = new Padding(6, 8, 6, 8);
             btnInsertar.Size = new Size(163, 52);
+            btnInsertar.Click += btnInsertar_Click;
             // 
             // btnConsultar
             // 

@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Camiones.clases;
+using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Camiones.clases;
-using Microsoft.Data.SqlClient;
+using static System.Net.Mime.MediaTypeNames;
 
 
 namespace Camiones
@@ -25,23 +26,23 @@ namespace Camiones
 
         private void btnLicencia_Click(object sender, EventArgs e)
         {
-           // Clsoperador.SubirDoumento(txtID.Text);
+            // Clsoperador.SubirDoumento(txtID.Text);
         }
 
 
         private void btnApto_Click(object sender, EventArgs e)
         {
-           // Clsoperador.SubirDoumento(txtID.Text);
+            // Clsoperador.SubirDoumento(txtID.Text);
         }
 
         private void btnComprobante_Click(object sender, EventArgs e)
         {
-           // Clsoperador.SubirDoumento(txtID.Text);
+            // Clsoperador.SubirDoumento(txtID.Text);
         }
 
         private void btnINE_Click(object sender, EventArgs e)
         {
-           // Clsoperador.SubirDoumento(txtID.Text);
+            // Clsoperador.SubirDoumento(txtID.Text);
         }
 
         private void btnCURP_Click(object sender, EventArgs e)
@@ -56,9 +57,9 @@ namespace Camiones
             //Clsoperador.SubirDoumento(txtID.Text);
         }
 
-       private void btnContrato_Click(object sender, EventArgs e)
+        private void btnContrato_Click(object sender, EventArgs e)
         {
-           //Clsoperador.SubirDoumento(txtID.Text);
+            //Clsoperador.SubirDoumento(txtID.Text);
         }
 
         private void btnCondiciones_Click(object sender, EventArgs e)
@@ -68,12 +69,12 @@ namespace Camiones
 
         private void btnCapacitaciones_Click(object sender, EventArgs e)
         {
-           //Clsoperador.SubirDoumento(txtID.Text);
+            //Clsoperador.SubirDoumento(txtID.Text);
         }
 
         private void btnViajes_Click(object sender, EventArgs e)
         {
-           //Clsoperador.SubirDoumento(txtID.Text);
+            //Clsoperador.SubirDoumento(txtID.Text);
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -175,109 +176,45 @@ namespace Camiones
         {
             Clsoperador.SubirFoto(txtID.Text, pictureBox1, txtURLimagen);
         }
-    
 
 
-    //aqui empiezan los metodos del CRUD
-    
-        public static void Insertar(string idoperador, string nombreoperador, string apellidomoperador, string apellidopoperador, string licencia, string aptomedico, string comprobantedomicilio, string ine, string curp, string antidoping, string contratolaboral, string condiciones, string capacitaciones, string viajes, string fotooperador)
+
+
+        private void btnInsertar_Click(object sender, EventArgs e)
         {
             try
             {
-                SqlConnection cn = Conexion.Conectar();
+                string query = "INSERT INTO dbo.operador (nombreoperador,apellidomoperador,apellidopoperador,licencia,aptomedico,comprobantedomicilio,ine,curp,antidoping,contratolaboral,condiciones,capacitaciones,viajes,fotooperador) VALUES (@nombreoperador,@apellidomoperador,@apellidopoperador,@licencia,@aptomedico,@comprobantedomicilio,@ine,@curp,@antidoping,@contratolaboral,@condiciones,@capacitaciones,@viajes,@fotooperador)";
 
-                string query = "INSERT INTO operador (idoperador,nombreoperador,apellidomoperador,apellidopoperador,licencia,aptomedico,comprobantedomicilio,ine,curp,antidoping,contratolaboral,condiciones,capacitaciones,viajes,fotooperador) VALUES (@idoperador,@nombreoperador,@apellidomoperador,@apellidopoperador,@licencia,@aptomedico,@comprobantedomicilio,@ine,@curp,@antidoping,@contratolaboral,@condiciones,@capacitaciones,@viajes,@fotooperador)";
+                var parametros = new Dictionary<string, object>()
+        {
+            { "@nombreoperador", txtNombre.Text },
+            { "@apellidomoperador", txtMaterno.Text },
+            { "@apellidopoperador", txtPaterno.Text },
+            { "@licencia", txtURLlicencia.Text },
+            { "@aptomedico", txtURLapto.Text },
+            { "@comprobantedomicilio", txtDomicilio.Text },
+            { "@ine", txtINE.Text },
+            { "@curp", TXTcurp.Text },
+            { "@antidoping", txtURLanti.Text },
+            { "@contratolaboral", txtURLcontrato.Text },
+            { "@condiciones", txtURLcondiciones.Text },
+            { "@capacitaciones", txtURLcapacitaciones.Text },
+            { "@viajes", txtURLviajes.Text },
+            { "@fotooperador", txtURLimagen.Text }
+        };
 
-                SqlCommand cmd = new SqlCommand(query, cn);
-                cmd.Parameters.AddWithValue("@idoperador", idoperador);
-                cmd.Parameters.AddWithValue("@nombreoperador", nombreoperador);
-                cmd.Parameters.AddWithValue("@apellidomoperador", apellidomoperador);
-                cmd.Parameters.AddWithValue("@apellidopoperador", apellidopoperador);
-                cmd.Parameters.AddWithValue("@licencia", licencia);
-                cmd.Parameters.AddWithValue("@aptomedico", aptomedico);
-                cmd.Parameters.AddWithValue("@comprobantedomicilio", comprobantedomicilio);
-                cmd.Parameters.AddWithValue("@ine", ine);
-                cmd.Parameters.AddWithValue("@curp", curp);
-                cmd.Parameters.AddWithValue("@antidoping", antidoping);
-                cmd.Parameters.AddWithValue("@contratolaboral", contratolaboral);
-                cmd.Parameters.AddWithValue("@condiciones", condiciones);
-                cmd.Parameters.AddWithValue("@capacitaciones", capacitaciones);
-                cmd.Parameters.AddWithValue("@viajes", viajes);
-                cmd.Parameters.AddWithValue("@fotooperador", fotooperador);
-
-                cmd.ExecuteNonQuery();
-                cn.Close();
-
+                Consultas.Ejecutar(query, parametros);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al insertar el camión: " + ex.Message);
-
+                MessageBox.Show(ex.Message);
             }
         }
-
-
-
-
-        public static DataTable Consultar()
-        {
-            SqlConnection cn = Conexion.Conectar();
-
-            string query = "SELECT * FROM camion";
-
-            SqlDataAdapter da = new SqlDataAdapter(query, cn);
-
-            DataTable dt = new DataTable();
-
-            da.Fill(dt);
-
-            cn.Close();
-
-            return dt;
-        }
-
-
-        public static void Eliminar(int id)
-        {
-            if (MessageBox.Show("¿Desea eliminar este camión?", "Confirmar eliminación",
-                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                try
-                {
-                    SqlConnection cn = Conexion.Conectar();
-
-                    string query = "DELETE FROM camion WHERE idcamion=@id";
-
-                    SqlCommand cmd = new SqlCommand(query, cn);
-                    cmd.Parameters.AddWithValue("@id", id);
-
-                    cmd.ExecuteNonQuery();
-
-                    cn.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al eliminar el camión: " + ex.Message);
-                }
-            }
-        }
-
-
-        public static void Actualizar(int id, string tipo)
-        {
-            SqlConnection cn = Conexion.Conectar();
-
-            string query = "UPDATE camion SET tipocamion=@tipo WHERE idcamion=@id";
-
-            SqlCommand cmd = new SqlCommand(query, cn);
-
-            cmd.Parameters.AddWithValue("@tipo", tipo);
-            cmd.Parameters.AddWithValue("@id", id);
-
-            cmd.ExecuteNonQuery();
-
-            cn.Close();
-        }
-
     }
-}
+    }
+
+
+
+    
+

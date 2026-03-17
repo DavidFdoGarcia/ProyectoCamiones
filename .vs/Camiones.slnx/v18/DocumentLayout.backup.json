@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|c:\\users\\david\\desktop\\proyectocamiones_real\\camiones\\camiones\\clases\\clsoperador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|solutionrelative:camiones\\clases\\clsoperador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|c:\\users\\david\\desktop\\proyectocamiones_real\\camiones\\camiones\\operadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|solutionrelative:camiones\\operadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\camiones\\operadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|solutionrelative:camiones\\operadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|c:\\users\\david\\desktop\\proyectocamiones_real\\camiones\\camiones\\altacamiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|solutionrelative:camiones\\altacamiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\camiones\\altacamiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|c:\\users\\david\\desktop\\proyectocamiones_real\\camiones\\camiones\\altacamiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|solutionrelative:camiones\\altacamiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\camiones\\operadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E185EFCC-4099-6CDB-9A69-BE3B1BEC8AE3}|Camiones\\Camiones.csproj|solutionrelative:camiones\\operadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,56 +26,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "clsoperador.cs",
-              "DocumentMoniker": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\clases\\clsoperador.cs",
-              "RelativeDocumentMoniker": "Camiones\\clases\\clsoperador.cs",
-              "ToolTip": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\clases\\clsoperador.cs*",
-              "RelativeToolTip": "Camiones\\clases\\clsoperador.cs*",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T00:12:00.341Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Operadores.cs",
-              "DocumentMoniker": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\Operadores.cs",
-              "RelativeDocumentMoniker": "Camiones\\Operadores.cs",
-              "ToolTip": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\Operadores.cs",
-              "RelativeToolTip": "Camiones\\Operadores.cs",
-              "ViewState": "AgIAAKcAAAAAAAAAAAAawK8AAAA5AAAAAAAAAA==",
+              "Title": "AltaCamiones.cs",
+              "DocumentMoniker": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\AltaCamiones.cs",
+              "RelativeDocumentMoniker": "Camiones\\AltaCamiones.cs",
+              "ToolTip": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\AltaCamiones.cs",
+              "RelativeToolTip": "Camiones\\AltaCamiones.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAAD4AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T00:11:27.096Z",
+              "WhenOpened": "2026-03-17T03:25:42.348Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Operadores.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\Operadores.cs",
-              "RelativeDocumentMoniker": "Camiones\\Operadores.cs",
-              "ToolTip": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\Operadores.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Camiones\\Operadores.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T00:10:36.376Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "AltaCamiones.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\AltaCamiones.cs",
               "RelativeDocumentMoniker": "Camiones\\AltaCamiones.cs",
               "ToolTip": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\AltaCamiones.cs [Dise\u00F1o]",
               "RelativeToolTip": "Camiones\\AltaCamiones.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T00:09:38.636Z",
+              "WhenOpened": "2026-03-17T03:25:39.561Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Operadores.cs",
+              "DocumentMoniker": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\Operadores.cs",
+              "RelativeDocumentMoniker": "Camiones\\Operadores.cs",
+              "ToolTip": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\Operadores.cs*",
+              "RelativeToolTip": "Camiones\\Operadores.cs*",
+              "ViewState": "AgIAALoAAAAAAAAAAAAAALoAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T03:21:40.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Operadores.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\Operadores.cs",
+              "RelativeDocumentMoniker": "Camiones\\Operadores.cs",
+              "ToolTip": "C:\\Users\\David\\Desktop\\ProyectoCamiones_real\\Camiones\\Camiones\\Operadores.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "Camiones\\Operadores.cs [Dise\u00F1o]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T00:10:36.376Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]
