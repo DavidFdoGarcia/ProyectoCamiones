@@ -38,16 +38,7 @@
             // 
             // btnInsertar
             // 
-            btnInsertar.Location = new Point(453, 393);
-            btnInsertar.Visible = false;
-            // 
-            // btnConsultar
-            // 
-            btnConsultar.Location = new Point(282, 393);
-            // 
-            // btnBaja
-            // 
-            btnBaja.Location = new Point(107, 393);
+            
             // 
             // btnOperador
             // 
@@ -82,9 +73,7 @@
             Name = "Principal";
             Text = "Principal";
             Load += Principal_Load;
-            Controls.SetChildIndex(btnBaja, 0);
-            Controls.SetChildIndex(btnConsultar, 0);
-            Controls.SetChildIndex(btnInsertar, 0);
+   
             Controls.SetChildIndex(btnSalir, 0);
             Controls.SetChildIndex(btnOperador, 0);
             Controls.SetChildIndex(btnAltaCamiones, 0);

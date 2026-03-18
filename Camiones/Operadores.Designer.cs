@@ -40,7 +40,6 @@
             lblINE = new Label();
             lblCURP = new Label();
             lblCondiciones = new Label();
-            lblContrato = new Label();
             lblCapacitaciones = new Label();
             lblViajes = new Label();
             pictureBox1 = new PictureBox();
@@ -48,31 +47,27 @@
             btnLicencia = new Button();
             btnCondiciones = new Button();
             btnCapacitaciones = new Button();
-            btnContrato = new Button();
             btnCURP = new Button();
-            btnAnti = new Button();
+            btnContrato = new Button();
             btnINE = new Button();
             btnComprobante = new Button();
             btnApto = new Button();
             btnViajes = new Button();
             txtID = new TextBox();
-            rdbAntiSI = new RadioButton();
+            rbAntiSI = new RadioButton();
             lblAnti = new Label();
-            rdbAntiNO = new RadioButton();
-            rdbContratoNO = new RadioButton();
-            rdbContratoSI = new RadioButton();
-            rbdViajesNO = new RadioButton();
-            rbdViajesSI = new RadioButton();
-            rbdCapacitacionesNO = new RadioButton();
-            rbdCapacitacionesSI = new RadioButton();
-            rbdCondicionesNO = new RadioButton();
-            rdbCondicionesSI = new RadioButton();
+            rbViajesNO = new RadioButton();
+            rbViajesSI = new RadioButton();
+            rbCapacitacionesNO = new RadioButton();
+            rbCapacitacionesSI = new RadioButton();
+            rbContratoNO = new RadioButton();
+            rbContratoSI = new RadioButton();
             txtViajes = new TextBox();
             panel1 = new Panel();
+            rbAntiNO = new RadioButton();
             panel2 = new Panel();
             rbdAptoNO = new RadioButton();
-            pbOperador = new RadioButton();
-            panel3 = new Panel();
+            rbAptoSi = new RadioButton();
             panel4 = new Panel();
             panel5 = new Panel();
             panel6 = new Panel();
@@ -86,7 +81,6 @@
             txtURLlicencia = new TextBox();
             txtURLimagen = new TextBox();
             txtURLcapacitaciones = new TextBox();
-            txtURLcondiciones = new TextBox();
             txtURLcontrato = new TextBox();
             txtURLanti = new TextBox();
             txtURLcurp = new TextBox();
@@ -96,10 +90,18 @@
             txtURLviajes = new TextBox();
             btnCapacitacion = new Button();
             txtNumeroCapacitaciones = new TextBox();
+            btnConsultar = new Button();
+            txtLicencia = new TextBox();
+            btnInserta = new Button();
+            label1 = new Label();
+            btnBuscar = new Button();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            btnReporte = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
@@ -111,49 +113,13 @@
             btnSalir.Location = new Point(875, 525);
             btnSalir.Margin = new Padding(4, 5, 4, 5);
             btnSalir.Size = new Size(151, 35);
-            // 
-            // btnInsertar
-            // 
-            btnInsertar.Location = new Point(905, 352);
-            btnInsertar.Margin = new Padding(4, 5, 4, 5);
-            btnInsertar.Size = new Size(114, 31);
-            btnInsertar.Click += btnInsertar_Click;
-            // 
-            // btnConsultar
-            // 
-            btnConsultar.Location = new Point(747, 375);
-            btnConsultar.Margin = new Padding(4, 5, 4, 5);
-            btnConsultar.Size = new Size(114, 32);
-            btnConsultar.Click += btnConsultar_Click;
-            // 
-            // btnBaja
-            // 
-            btnBaja.Location = new Point(757, 445);
-            btnBaja.Margin = new Padding(4, 5, 4, 5);
-            btnBaja.Size = new Size(122, 31);
-            // 
-            // btnActualizar
-            // 
-            btnActualizar.Location = new Point(905, 426);
-            btnActualizar.Margin = new Padding(4, 5, 4, 5);
-            btnActualizar.Size = new Size(121, 31);
-            // 
-            // btnBuscar
-            // 
-            btnBuscar.Location = new Point(884, 292);
-            btnBuscar.Margin = new Padding(4, 5, 4, 5);
-            btnBuscar.Size = new Size(97, 34);
-            // 
-            // btnGenerar
-            // 
-            btnGenerar.Location = new Point(840, 176);
-            btnGenerar.Click += btnGenerar_Click;
+        
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
             lblNombre.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNombre.Location = new Point(47, 35);
+            lblNombre.Location = new Point(35, 47);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(74, 25);
             lblNombre.TabIndex = 1;
@@ -164,7 +130,7 @@
             // 
             lblMaterno.AutoSize = true;
             lblMaterno.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMaterno.Location = new Point(48, 118);
+            lblMaterno.Location = new Point(36, 130);
             lblMaterno.Name = "lblMaterno";
             lblMaterno.Size = new Size(146, 25);
             lblMaterno.TabIndex = 2;
@@ -175,7 +141,7 @@
             // 
             lblPaterno.AutoSize = true;
             lblPaterno.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPaterno.Location = new Point(47, 75);
+            lblPaterno.Location = new Point(35, 87);
             lblPaterno.Name = "lblPaterno";
             lblPaterno.Size = new Size(142, 25);
             lblPaterno.TabIndex = 3;
@@ -184,21 +150,21 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(149, 35);
+            txtNombre.Location = new Point(137, 47);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(400, 23);
             txtNombre.TabIndex = 4;
             // 
             // txtPaterno
             // 
-            txtPaterno.Location = new Point(204, 75);
+            txtPaterno.Location = new Point(192, 87);
             txtPaterno.Name = "txtPaterno";
             txtPaterno.Size = new Size(400, 23);
             txtPaterno.TabIndex = 5;
             // 
             // txtMaterno
             // 
-            txtMaterno.Location = new Point(214, 118);
+            txtMaterno.Location = new Point(202, 130);
             txtMaterno.Name = "txtMaterno";
             txtMaterno.Size = new Size(400, 23);
             txtMaterno.TabIndex = 6;
@@ -207,7 +173,7 @@
             // 
             lblLicencia.AutoSize = true;
             lblLicencia.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLicencia.Location = new Point(47, 159);
+            lblLicencia.Location = new Point(35, 171);
             lblLicencia.Name = "lblLicencia";
             lblLicencia.Size = new Size(78, 25);
             lblLicencia.TabIndex = 7;
@@ -218,7 +184,7 @@
             // 
             lblApto.AutoSize = true;
             lblApto.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblApto.Location = new Point(48, 200);
+            lblApto.Location = new Point(36, 212);
             lblApto.Name = "lblApto";
             lblApto.Size = new Size(110, 25);
             lblApto.TabIndex = 8;
@@ -229,7 +195,7 @@
             // 
             lblDomicilio.AutoSize = true;
             lblDomicilio.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDomicilio.Location = new Point(48, 244);
+            lblDomicilio.Location = new Point(36, 256);
             lblDomicilio.Name = "lblDomicilio";
             lblDomicilio.Size = new Size(83, 25);
             lblDomicilio.TabIndex = 9;
@@ -240,7 +206,7 @@
             // 
             lblINE.AutoSize = true;
             lblINE.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblINE.Location = new Point(48, 284);
+            lblINE.Location = new Point(36, 296);
             lblINE.Name = "lblINE";
             lblINE.Size = new Size(39, 25);
             lblINE.TabIndex = 11;
@@ -251,7 +217,7 @@
             // 
             lblCURP.AutoSize = true;
             lblCURP.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCURP.Location = new Point(47, 330);
+            lblCURP.Location = new Point(35, 342);
             lblCURP.Name = "lblCURP";
             lblCURP.Size = new Size(59, 25);
             lblCURP.TabIndex = 14;
@@ -262,29 +228,18 @@
             // 
             lblCondiciones.AutoSize = true;
             lblCondiciones.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCondiciones.Location = new Point(48, 475);
+            lblCondiciones.Location = new Point(36, 445);
             lblCondiciones.Name = "lblCondiciones";
-            lblCondiciones.Size = new Size(194, 25);
+            lblCondiciones.Size = new Size(145, 25);
             lblCondiciones.TabIndex = 16;
-            lblCondiciones.Text = "Condiciones Laborales";
+            lblCondiciones.Text = "Contrato Laboral";
             lblCondiciones.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // lblContrato
-            // 
-            lblContrato.AutoSize = true;
-            lblContrato.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblContrato.Location = new Point(47, 426);
-            lblContrato.Name = "lblContrato";
-            lblContrato.Size = new Size(145, 25);
-            lblContrato.TabIndex = 17;
-            lblContrato.Text = "Contrato Laboral";
-            lblContrato.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblCapacitaciones
             // 
             lblCapacitaciones.AutoSize = true;
             lblCapacitaciones.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCapacitaciones.Location = new Point(47, 528);
+            lblCapacitaciones.Location = new Point(35, 498);
             lblCapacitaciones.Name = "lblCapacitaciones";
             lblCapacitaciones.Size = new Size(134, 25);
             lblCapacitaciones.TabIndex = 20;
@@ -295,7 +250,7 @@
             // 
             lblViajes.AutoSize = true;
             lblViajes.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblViajes.Location = new Point(48, 585);
+            lblViajes.Location = new Point(36, 555);
             lblViajes.Name = "lblViajes";
             lblViajes.Size = new Size(60, 25);
             lblViajes.TabIndex = 21;
@@ -348,20 +303,9 @@
             btnCapacitaciones.Visible = false;
             btnCapacitaciones.Click += btnCapacitaciones_Click;
             // 
-            // btnContrato
-            // 
-            btnContrato.Location = new Point(211, 5);
-            btnContrato.Name = "btnContrato";
-            btnContrato.Size = new Size(96, 25);
-            btnContrato.TabIndex = 26;
-            btnContrato.Text = "Subir";
-            btnContrato.UseVisualStyleBackColor = true;
-            btnContrato.Visible = false;
-            btnContrato.Click += btnContrato_Click;
-            // 
             // btnCURP
             // 
-            btnCURP.Location = new Point(485, 330);
+            btnCURP.Location = new Point(473, 342);
             btnCURP.Name = "btnCURP";
             btnCURP.Size = new Size(107, 25);
             btnCURP.TabIndex = 27;
@@ -369,20 +313,20 @@
             btnCURP.UseVisualStyleBackColor = true;
             btnCURP.Click += btnCURP_Click;
             // 
-            // btnAnti
+            // btnContrato
             // 
-            btnAnti.Location = new Point(157, 8);
-            btnAnti.Name = "btnAnti";
-            btnAnti.Size = new Size(96, 25);
-            btnAnti.TabIndex = 28;
-            btnAnti.Text = "Subir";
-            btnAnti.UseVisualStyleBackColor = true;
-            btnAnti.Visible = false;
-            btnAnti.Click += btnAnti_Click;
+            btnContrato.Location = new Point(157, 8);
+            btnContrato.Name = "btnContrato";
+            btnContrato.Size = new Size(96, 25);
+            btnContrato.TabIndex = 28;
+            btnContrato.Text = "Subir";
+            btnContrato.UseVisualStyleBackColor = true;
+            btnContrato.Visible = false;
+            btnContrato.Click += btnAnti_Click;
             // 
             // btnINE
             // 
-            btnINE.Location = new Point(485, 287);
+            btnINE.Location = new Point(473, 299);
             btnINE.Name = "btnINE";
             btnINE.Size = new Size(107, 24);
             btnINE.TabIndex = 29;
@@ -392,7 +336,7 @@
             // 
             // btnComprobante
             // 
-            btnComprobante.Location = new Point(617, 247);
+            btnComprobante.Location = new Point(605, 259);
             btnComprobante.Name = "btnComprobante";
             btnComprobante.Size = new Size(94, 25);
             btnComprobante.TabIndex = 30;
@@ -424,129 +368,96 @@
             // 
             // txtID
             // 
-            txtID.Location = new Point(608, 35);
+            txtID.Enabled = false;
+            txtID.Location = new Point(264, 9);
             txtID.Name = "txtID";
-            txtID.Size = new Size(30, 23);
+            txtID.Size = new Size(50, 23);
             txtID.TabIndex = 33;
             // 
-            // rdbAntiSI
+            // rbAntiSI
             // 
-            rdbAntiSI.AutoSize = true;
-            rdbAntiSI.Location = new Point(13, 14);
-            rdbAntiSI.Name = "rdbAntiSI";
-            rdbAntiSI.Size = new Size(34, 19);
-            rdbAntiSI.TabIndex = 34;
-            rdbAntiSI.Text = "SI";
-            rdbAntiSI.UseVisualStyleBackColor = true;
-            rdbAntiSI.CheckedChanged += rdbAntiSI_CheckedChanged;
+            rbAntiSI.AutoSize = true;
+            rbAntiSI.Location = new Point(13, 14);
+            rbAntiSI.Name = "rbAntiSI";
+            rbAntiSI.Size = new Size(34, 19);
+            rbAntiSI.TabIndex = 34;
+            rbAntiSI.Text = "SI";
+            rbAntiSI.UseVisualStyleBackColor = true;
+            rbAntiSI.CheckedChanged += rdbAntiSI_CheckedChanged;
             // 
             // lblAnti
             // 
             lblAnti.AutoSize = true;
             lblAnti.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAnti.Location = new Point(47, 372);
+            lblAnti.Location = new Point(35, 384);
             lblAnti.Name = "lblAnti";
             lblAnti.Size = new Size(96, 25);
             lblAnti.TabIndex = 13;
             lblAnti.Text = "Antidoping";
             lblAnti.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // rdbAntiNO
+            // rbViajesNO
             // 
-            rdbAntiNO.AutoSize = true;
-            rdbAntiNO.Checked = true;
-            rdbAntiNO.Location = new Point(69, 13);
-            rdbAntiNO.Name = "rdbAntiNO";
-            rdbAntiNO.Size = new Size(43, 19);
-            rdbAntiNO.TabIndex = 35;
-            rdbAntiNO.TabStop = true;
-            rdbAntiNO.Text = "NO";
-            rdbAntiNO.UseVisualStyleBackColor = true;
+            rbViajesNO.AutoSize = true;
+            rbViajesNO.Location = new Point(67, 3);
+            rbViajesNO.Name = "rbViajesNO";
+            rbViajesNO.Size = new Size(43, 19);
+            rbViajesNO.TabIndex = 39;
+            rbViajesNO.Text = "NO";
+            rbViajesNO.UseVisualStyleBackColor = true;
             // 
-            // rdbContratoNO
+            // rbViajesSI
             // 
-            rdbContratoNO.AutoSize = true;
-            rdbContratoNO.Location = new Point(64, 8);
-            rdbContratoNO.Name = "rdbContratoNO";
-            rdbContratoNO.Size = new Size(43, 19);
-            rdbContratoNO.TabIndex = 37;
-            rdbContratoNO.Text = "NO";
-            rdbContratoNO.UseVisualStyleBackColor = true;
-            rdbContratoNO.CheckedChanged += radioButton2_CheckedChanged;
+            rbViajesSI.AutoSize = true;
+            rbViajesSI.Location = new Point(11, 3);
+            rbViajesSI.Name = "rbViajesSI";
+            rbViajesSI.Size = new Size(34, 19);
+            rbViajesSI.TabIndex = 38;
+            rbViajesSI.Text = "SI";
+            rbViajesSI.UseVisualStyleBackColor = true;
+            rbViajesSI.CheckedChanged += rbdViajesSI_CheckedChanged;
             // 
-            // rdbContratoSI
+            // rbCapacitacionesNO
             // 
-            rdbContratoSI.AutoSize = true;
-            rdbContratoSI.Location = new Point(8, 8);
-            rdbContratoSI.Name = "rdbContratoSI";
-            rdbContratoSI.Size = new Size(34, 19);
-            rdbContratoSI.TabIndex = 36;
-            rdbContratoSI.Text = "SI";
-            rdbContratoSI.UseVisualStyleBackColor = true;
-            rdbContratoSI.CheckedChanged += rdbContratoSI_CheckedChanged;
+            rbCapacitacionesNO.AutoSize = true;
+            rbCapacitacionesNO.Location = new Point(60, 14);
+            rbCapacitacionesNO.Name = "rbCapacitacionesNO";
+            rbCapacitacionesNO.Size = new Size(43, 19);
+            rbCapacitacionesNO.TabIndex = 41;
+            rbCapacitacionesNO.Text = "NO";
+            rbCapacitacionesNO.UseVisualStyleBackColor = true;
             // 
-            // rbdViajesNO
+            // rbCapacitacionesSI
             // 
-            rbdViajesNO.AutoSize = true;
-            rbdViajesNO.Location = new Point(67, 3);
-            rbdViajesNO.Name = "rbdViajesNO";
-            rbdViajesNO.Size = new Size(43, 19);
-            rbdViajesNO.TabIndex = 39;
-            rbdViajesNO.Text = "NO";
-            rbdViajesNO.UseVisualStyleBackColor = true;
+            rbCapacitacionesSI.AutoSize = true;
+            rbCapacitacionesSI.Location = new Point(4, 14);
+            rbCapacitacionesSI.Name = "rbCapacitacionesSI";
+            rbCapacitacionesSI.Size = new Size(34, 19);
+            rbCapacitacionesSI.TabIndex = 40;
+            rbCapacitacionesSI.Text = "SI";
+            rbCapacitacionesSI.UseVisualStyleBackColor = true;
+            rbCapacitacionesSI.CheckedChanged += rbdCapacitacionesSI_CheckedChanged;
             // 
-            // rbdViajesSI
+            // rbContratoNO
             // 
-            rbdViajesSI.AutoSize = true;
-            rbdViajesSI.Location = new Point(11, 3);
-            rbdViajesSI.Name = "rbdViajesSI";
-            rbdViajesSI.Size = new Size(34, 19);
-            rbdViajesSI.TabIndex = 38;
-            rbdViajesSI.Text = "SI";
-            rbdViajesSI.UseVisualStyleBackColor = true;
-            rbdViajesSI.CheckedChanged += rbdViajesSI_CheckedChanged;
+            rbContratoNO.AutoSize = true;
+            rbContratoNO.Location = new Point(75, 14);
+            rbContratoNO.Name = "rbContratoNO";
+            rbContratoNO.Size = new Size(43, 19);
+            rbContratoNO.TabIndex = 43;
+            rbContratoNO.Text = "NO";
+            rbContratoNO.UseVisualStyleBackColor = true;
             // 
-            // rbdCapacitacionesNO
+            // rbContratoSI
             // 
-            rbdCapacitacionesNO.AutoSize = true;
-            rbdCapacitacionesNO.Location = new Point(60, 14);
-            rbdCapacitacionesNO.Name = "rbdCapacitacionesNO";
-            rbdCapacitacionesNO.Size = new Size(43, 19);
-            rbdCapacitacionesNO.TabIndex = 41;
-            rbdCapacitacionesNO.Text = "NO";
-            rbdCapacitacionesNO.UseVisualStyleBackColor = true;
-            // 
-            // rbdCapacitacionesSI
-            // 
-            rbdCapacitacionesSI.AutoSize = true;
-            rbdCapacitacionesSI.Location = new Point(4, 14);
-            rbdCapacitacionesSI.Name = "rbdCapacitacionesSI";
-            rbdCapacitacionesSI.Size = new Size(34, 19);
-            rbdCapacitacionesSI.TabIndex = 40;
-            rbdCapacitacionesSI.Text = "SI";
-            rbdCapacitacionesSI.UseVisualStyleBackColor = true;
-            rbdCapacitacionesSI.CheckedChanged += rbdCapacitacionesSI_CheckedChanged;
-            // 
-            // rbdCondicionesNO
-            // 
-            rbdCondicionesNO.AutoSize = true;
-            rbdCondicionesNO.Location = new Point(75, 14);
-            rbdCondicionesNO.Name = "rbdCondicionesNO";
-            rbdCondicionesNO.Size = new Size(43, 19);
-            rbdCondicionesNO.TabIndex = 43;
-            rbdCondicionesNO.Text = "NO";
-            rbdCondicionesNO.UseVisualStyleBackColor = true;
-            // 
-            // rdbCondicionesSI
-            // 
-            rdbCondicionesSI.AutoSize = true;
-            rdbCondicionesSI.Location = new Point(19, 14);
-            rdbCondicionesSI.Name = "rdbCondicionesSI";
-            rdbCondicionesSI.Size = new Size(34, 19);
-            rdbCondicionesSI.TabIndex = 42;
-            rdbCondicionesSI.Text = "SI";
-            rdbCondicionesSI.UseVisualStyleBackColor = true;
-            rdbCondicionesSI.CheckedChanged += rdbCondicionesSI_CheckedChanged;
+            rbContratoSI.AutoSize = true;
+            rbContratoSI.Location = new Point(19, 14);
+            rbContratoSI.Name = "rbContratoSI";
+            rbContratoSI.Size = new Size(34, 19);
+            rbContratoSI.TabIndex = 42;
+            rbContratoSI.Text = "SI";
+            rbContratoSI.UseVisualStyleBackColor = true;
+            rbContratoSI.CheckedChanged += rdbCondicionesSI_CheckedChanged;
             // 
             // txtViajes
             // 
@@ -559,20 +470,32 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(rdbAntiNO);
-            panel1.Controls.Add(rdbAntiSI);
-            panel1.Controls.Add(btnAnti);
-            panel1.Location = new Point(214, 361);
+            panel1.Controls.Add(rbAntiNO);
+            panel1.Controls.Add(rbAntiSI);
+            panel1.Controls.Add(btnContrato);
+            panel1.Location = new Point(202, 373);
             panel1.Name = "panel1";
             panel1.Size = new Size(264, 38);
             panel1.TabIndex = 45;
             // 
+            // rbAntiNO
+            // 
+            rbAntiNO.AutoSize = true;
+            rbAntiNO.Checked = true;
+            rbAntiNO.Location = new Point(69, 13);
+            rbAntiNO.Name = "rbAntiNO";
+            rbAntiNO.Size = new Size(43, 19);
+            rbAntiNO.TabIndex = 35;
+            rbAntiNO.TabStop = true;
+            rbAntiNO.Text = "NO";
+            rbAntiNO.UseVisualStyleBackColor = true;
+            // 
             // panel2
             // 
             panel2.Controls.Add(rbdAptoNO);
-            panel2.Controls.Add(pbOperador);
+            panel2.Controls.Add(rbAptoSi);
             panel2.Controls.Add(btnApto);
-            panel2.Location = new Point(166, 193);
+            panel2.Location = new Point(154, 205);
             panel2.Name = "panel2";
             panel2.Size = new Size(279, 40);
             panel2.TabIndex = 46;
@@ -589,35 +512,25 @@
             rbdAptoNO.Text = "NO";
             rbdAptoNO.UseVisualStyleBackColor = true;
             // 
-            // pbOperador
+            // rbAptoSi
             // 
-            pbOperador.AutoSize = true;
-            pbOperador.Location = new Point(13, 13);
-            pbOperador.Name = "pbOperador";
-            pbOperador.Size = new Size(34, 19);
-            pbOperador.TabIndex = 34;
-            pbOperador.Text = "SI";
-            pbOperador.UseVisualStyleBackColor = true;
-            pbOperador.CheckedChanged += rbdAptoSI_CheckedChanged;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(rdbContratoSI);
-            panel3.Controls.Add(btnContrato);
-            panel3.Controls.Add(rdbContratoNO);
-            panel3.Location = new Point(245, 418);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(336, 33);
-            panel3.TabIndex = 46;
+            rbAptoSi.AutoSize = true;
+            rbAptoSi.Location = new Point(13, 13);
+            rbAptoSi.Name = "rbAptoSi";
+            rbAptoSi.Size = new Size(34, 19);
+            rbAptoSi.TabIndex = 34;
+            rbAptoSi.Text = "SI";
+            rbAptoSi.UseVisualStyleBackColor = true;
+            rbAptoSi.CheckedChanged += rbdAptoSI_CheckedChanged;
             // 
             // panel4
             // 
             panel4.BackColor = SystemColors.MenuBar;
-            panel4.Controls.Add(rbdViajesNO);
+            panel4.Controls.Add(rbViajesNO);
             panel4.Controls.Add(btnViajes);
-            panel4.Controls.Add(rbdViajesSI);
+            panel4.Controls.Add(rbViajesSI);
             panel4.Controls.Add(txtViajes);
-            panel4.Location = new Point(265, 583);
+            panel4.Location = new Point(253, 553);
             panel4.Name = "panel4";
             panel4.Size = new Size(349, 39);
             panel4.TabIndex = 48;
@@ -626,9 +539,9 @@
             // 
             panel5.BackColor = SystemColors.MenuBar;
             panel5.Controls.Add(btnCapacitaciones);
-            panel5.Controls.Add(rbdCapacitacionesSI);
-            panel5.Controls.Add(rbdCapacitacionesNO);
-            panel5.Location = new Point(271, 527);
+            panel5.Controls.Add(rbCapacitacionesSI);
+            panel5.Controls.Add(rbCapacitacionesNO);
+            panel5.Location = new Point(259, 497);
             panel5.Name = "panel5";
             panel5.Size = new Size(291, 39);
             panel5.TabIndex = 49;
@@ -637,9 +550,9 @@
             // 
             panel6.BackColor = SystemColors.MenuBar;
             panel6.Controls.Add(btnCondiciones);
-            panel6.Controls.Add(rdbCondicionesSI);
-            panel6.Controls.Add(rbdCondicionesNO);
-            panel6.Location = new Point(271, 468);
+            panel6.Controls.Add(rbContratoSI);
+            panel6.Controls.Add(rbContratoNO);
+            panel6.Location = new Point(247, 450);
             panel6.Name = "panel6";
             panel6.Size = new Size(291, 39);
             panel6.TabIndex = 49;
@@ -649,7 +562,7 @@
             panel7.Controls.Add(rbdlicenciNO);
             panel7.Controls.Add(rbLicenciaSI);
             panel7.Controls.Add(btnLicencia);
-            panel7.Location = new Point(158, 150);
+            panel7.Location = new Point(146, 162);
             panel7.Name = "panel7";
             panel7.Size = new Size(256, 37);
             panel7.TabIndex = 47;
@@ -679,7 +592,7 @@
             // 
             // btnFoto
             // 
-            btnFoto.Location = new Point(760, 157);
+            btnFoto.Location = new Point(690, 168);
             btnFoto.Name = "btnFoto";
             btnFoto.Size = new Size(82, 23);
             btnFoto.TabIndex = 50;
@@ -689,77 +602,74 @@
             // 
             // txtINE
             // 
-            txtINE.Location = new Point(137, 284);
+            txtINE.Location = new Point(125, 296);
             txtINE.Name = "txtINE";
             txtINE.Size = new Size(277, 23);
             txtINE.TabIndex = 51;
             // 
             // TXTcurp
             // 
-            TXTcurp.Location = new Point(128, 330);
+            TXTcurp.Location = new Point(116, 342);
             TXTcurp.Name = "TXTcurp";
             TXTcurp.Size = new Size(288, 23);
             TXTcurp.TabIndex = 52;
             // 
             // txtDomicilio
             // 
-            txtDomicilio.Location = new Point(149, 249);
+            txtDomicilio.Location = new Point(137, 261);
             txtDomicilio.Name = "txtDomicilio";
             txtDomicilio.Size = new Size(455, 23);
             txtDomicilio.TabIndex = 53;
             // 
             // txtURLlicencia
             // 
-            txtURLlicencia.Location = new Point(472, 157);
+            txtURLlicencia.Location = new Point(813, 156);
             txtURLlicencia.Name = "txtURLlicencia";
+            txtURLlicencia.PlaceholderText = "URL";
             txtURLlicencia.Size = new Size(80, 23);
             txtURLlicencia.TabIndex = 54;
             txtURLlicencia.Visible = false;
             // 
             // txtURLimagen
             // 
-            txtURLimagen.Location = new Point(659, 150);
+            txtURLimagen.Location = new Point(960, 89);
             txtURLimagen.Name = "txtURLimagen";
+            txtURLimagen.PlaceholderText = "URL";
             txtURLimagen.Size = new Size(80, 23);
             txtURLimagen.TabIndex = 56;
             // 
             // txtURLcapacitaciones
             // 
-            txtURLcapacitaciones.Location = new Point(558, 541);
+            txtURLcapacitaciones.Location = new Point(546, 511);
             txtURLcapacitaciones.Name = "txtURLcapacitaciones";
             txtURLcapacitaciones.PlaceholderText = "url";
             txtURLcapacitaciones.Size = new Size(80, 23);
             txtURLcapacitaciones.TabIndex = 57;
             txtURLcapacitaciones.Visible = false;
             // 
-            // txtURLcondiciones
-            // 
-            txtURLcondiciones.Location = new Point(561, 481);
-            txtURLcondiciones.Name = "txtURLcondiciones";
-            txtURLcondiciones.Size = new Size(80, 23);
-            txtURLcondiciones.TabIndex = 58;
-            txtURLcondiciones.Visible = false;
-            // 
             // txtURLcontrato
             // 
-            txtURLcontrato.Location = new Point(631, 418);
+            txtURLcontrato.Location = new Point(549, 451);
             txtURLcontrato.Name = "txtURLcontrato";
+            txtURLcontrato.PlaceholderText = "URL";
             txtURLcontrato.Size = new Size(80, 23);
-            txtURLcontrato.TabIndex = 59;
+            txtURLcontrato.TabIndex = 58;
             txtURLcontrato.Visible = false;
             // 
             // txtURLanti
             // 
-            txtURLanti.Location = new Point(524, 374);
+            txtURLanti.Location = new Point(512, 386);
             txtURLanti.Name = "txtURLanti";
+            txtURLanti.PlaceholderText = "URL";
             txtURLanti.Size = new Size(80, 23);
             txtURLanti.TabIndex = 60;
             txtURLanti.Visible = false;
             // 
             // txtURLcurp
             // 
-            txtURLcurp.Location = new Point(617, 334);
+            txtURLcurp.Location = new Point(605, 346);
             txtURLcurp.Name = "txtURLcurp";
+            txtURLcurp.PlaceholderText = "URL";
             txtURLcurp.Size = new Size(80, 23);
             txtURLcurp.TabIndex = 61;
             txtURLcurp.TabStop = false;
@@ -767,8 +677,9 @@
             // 
             // txtURLine
             // 
-            txtURLine.Location = new Point(631, 292);
+            txtURLine.Location = new Point(619, 304);
             txtURLine.Name = "txtURLine";
+            txtURLine.PlaceholderText = "URL";
             txtURLine.Size = new Size(80, 23);
             txtURLine.TabIndex = 62;
             txtURLine.Visible = false;
@@ -777,22 +688,25 @@
             // 
             txtURLdomicilio.Location = new Point(747, 248);
             txtURLdomicilio.Name = "txtURLdomicilio";
+            txtURLdomicilio.PlaceholderText = "URL";
             txtURLdomicilio.Size = new Size(80, 23);
             txtURLdomicilio.TabIndex = 63;
             txtURLdomicilio.Visible = false;
             // 
             // txtURLapto
             // 
-            txtURLapto.Location = new Point(485, 200);
+            txtURLapto.Location = new Point(473, 212);
             txtURLapto.Name = "txtURLapto";
+            txtURLapto.PlaceholderText = "url";
             txtURLapto.Size = new Size(80, 23);
             txtURLapto.TabIndex = 64;
             txtURLapto.Visible = false;
             // 
             // txtURLviajes
             // 
-            txtURLviajes.Location = new Point(642, 590);
+            txtURLviajes.Location = new Point(630, 560);
             txtURLviajes.Name = "txtURLviajes";
+            txtURLviajes.PlaceholderText = "URL";
             txtURLviajes.Size = new Size(80, 23);
             txtURLviajes.TabIndex = 65;
             txtURLviajes.Visible = false;
@@ -809,12 +723,106 @@
             // 
             // txtNumeroCapacitaciones
             // 
-            txtNumeroCapacitaciones.Location = new Point(659, 537);
+            txtNumeroCapacitaciones.Location = new Point(722, 535);
             txtNumeroCapacitaciones.Name = "txtNumeroCapacitaciones";
             txtNumeroCapacitaciones.PlaceholderText = "numero capacitaciones";
             txtNumeroCapacitaciones.Size = new Size(80, 23);
             txtNumeroCapacitaciones.TabIndex = 66;
             txtNumeroCapacitaciones.Visible = false;
+            // 
+            // btnConsultar
+            // 
+            btnConsultar.Enabled = false;
+            btnConsultar.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnConsultar.Location = new Point(346, 8);
+            btnConsultar.Name = "btnConsultar";
+            btnConsultar.Size = new Size(96, 30);
+            btnConsultar.TabIndex = 67;
+            btnConsultar.Text = "Consultar";
+            btnConsultar.UseVisualStyleBackColor = true;
+            btnConsultar.Click += button1_Click;
+            // 
+            // txtLicencia
+            // 
+            txtLicencia.Location = new Point(417, 169);
+            txtLicencia.Name = "txtLicencia";
+            txtLicencia.Size = new Size(256, 23);
+            txtLicencia.TabIndex = 68;
+            txtLicencia.TextChanged += textBox1_TextChanged;
+            // 
+            // btnInserta
+            // 
+            btnInserta.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnInserta.Location = new Point(1035, 235);
+            btnInserta.Name = "btnInserta";
+            btnInserta.Size = new Size(96, 47);
+            btnInserta.TabIndex = 69;
+            btnInserta.Text = "Nuevo Operador";
+            btnInserta.UseVisualStyleBackColor = true;
+            btnInserta.Click += btnInserta_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(35, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(183, 25);
+            label1.TabIndex = 70;
+            label1.Text = "Número del Operador";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBuscar.Location = new Point(1035, 171);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(96, 47);
+            btnBuscar.TabIndex = 71;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(1035, 296);
+            button1.Name = "button1";
+            button1.Size = new Size(96, 47);
+            button1.TabIndex = 72;
+            button1.Text = "Nuevo Operador";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Location = new Point(1035, 358);
+            button2.Name = "button2";
+            button2.Size = new Size(96, 47);
+            button2.TabIndex = 73;
+            button2.Text = "Actualizar Operador";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Location = new Point(1035, 423);
+            button3.Name = "button3";
+            button3.Size = new Size(96, 47);
+            button3.TabIndex = 74;
+            button3.Text = "Baja Operador";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // btnReporte
+            // 
+            btnReporte.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReporte.Location = new Point(1033, 487);
+            btnReporte.Name = "btnReporte";
+            btnReporte.Size = new Size(96, 47);
+            btnReporte.TabIndex = 76;
+            btnReporte.Text = "Reporte";
+            btnReporte.UseVisualStyleBackColor = true;
+            btnReporte.Click += btnReporte_Click;
             // 
             // Operadores
             // 
@@ -822,7 +830,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.MenuBar;
             BackgroundImage = Properties.Resources.istockphoto_1465157700_612x612;
-            ClientSize = new Size(1047, 651);
+            ClientSize = new Size(1193, 641);
+            Controls.Add(btnReporte);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(btnBuscar);
+            Controls.Add(label1);
+            Controls.Add(btnInserta);
+            Controls.Add(txtLicencia);
+            Controls.Add(btnConsultar);
             Controls.Add(txtNumeroCapacitaciones);
             Controls.Add(btnCapacitacion);
             Controls.Add(txtURLviajes);
@@ -832,7 +849,6 @@
             Controls.Add(txtURLcurp);
             Controls.Add(txtURLanti);
             Controls.Add(txtURLcontrato);
-            Controls.Add(txtURLcondiciones);
             Controls.Add(txtURLcapacitaciones);
             Controls.Add(txtURLimagen);
             Controls.Add(txtURLlicencia);
@@ -845,7 +861,6 @@
             Controls.Add(panel5);
             Controls.Add(panel6);
             Controls.Add(panel4);
-            Controls.Add(panel3);
             Controls.Add(panel1);
             Controls.Add(txtID);
             Controls.Add(btnComprobante);
@@ -854,7 +869,6 @@
             Controls.Add(pictureBox1);
             Controls.Add(lblViajes);
             Controls.Add(lblCapacitaciones);
-            Controls.Add(lblContrato);
             Controls.Add(lblCondiciones);
             Controls.Add(lblCURP);
             Controls.Add(lblAnti);
@@ -872,7 +886,6 @@
             Name = "Operadores";
             Text = "Operadores";
             Load += Operadores_Load;
-            Controls.SetChildIndex(btnGenerar, 0);
             Controls.SetChildIndex(lblNombre, 0);
             Controls.SetChildIndex(lblMaterno, 0);
             Controls.SetChildIndex(lblPaterno, 0);
@@ -886,7 +899,6 @@
             Controls.SetChildIndex(lblAnti, 0);
             Controls.SetChildIndex(lblCURP, 0);
             Controls.SetChildIndex(lblCondiciones, 0);
-            Controls.SetChildIndex(lblContrato, 0);
             Controls.SetChildIndex(lblCapacitaciones, 0);
             Controls.SetChildIndex(lblViajes, 0);
             Controls.SetChildIndex(pictureBox1, 0);
@@ -895,7 +907,6 @@
             Controls.SetChildIndex(btnComprobante, 0);
             Controls.SetChildIndex(txtID, 0);
             Controls.SetChildIndex(panel1, 0);
-            Controls.SetChildIndex(panel3, 0);
             Controls.SetChildIndex(panel4, 0);
             Controls.SetChildIndex(panel6, 0);
             Controls.SetChildIndex(panel5, 0);
@@ -908,7 +919,6 @@
             Controls.SetChildIndex(txtURLlicencia, 0);
             Controls.SetChildIndex(txtURLimagen, 0);
             Controls.SetChildIndex(txtURLcapacitaciones, 0);
-            Controls.SetChildIndex(txtURLcondiciones, 0);
             Controls.SetChildIndex(txtURLcontrato, 0);
             Controls.SetChildIndex(txtURLanti, 0);
             Controls.SetChildIndex(txtURLcurp, 0);
@@ -916,21 +926,24 @@
             Controls.SetChildIndex(txtURLdomicilio, 0);
             Controls.SetChildIndex(txtURLapto, 0);
             Controls.SetChildIndex(txtURLviajes, 0);
-            Controls.SetChildIndex(btnBuscar, 0);
-            Controls.SetChildIndex(btnInsertar, 0);
-            Controls.SetChildIndex(btnConsultar, 0);
-            Controls.SetChildIndex(btnBaja, 0);
-            Controls.SetChildIndex(btnActualizar, 0);
-            Controls.SetChildIndex(btnSalir, 0);
             Controls.SetChildIndex(btnCapacitacion, 0);
             Controls.SetChildIndex(txtNumeroCapacitaciones, 0);
+            Controls.SetChildIndex(btnConsultar, 0);
+            Controls.SetChildIndex(txtLicencia, 0);
+            Controls.SetChildIndex(btnInserta, 0);
+            Controls.SetChildIndex(label1, 0);
+           
+            Controls.SetChildIndex(btnSalir, 0);
+            Controls.SetChildIndex(btnBuscar, 0);
+            Controls.SetChildIndex(button1, 0);
+            Controls.SetChildIndex(button2, 0);
+            Controls.SetChildIndex(button3, 0);
+            Controls.SetChildIndex(btnReporte, 0);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             panel5.ResumeLayout(false);
@@ -957,7 +970,6 @@
         private Label lblINE;
         private Label lblCURP;
         private Label lblCondiciones;
-        private Label lblContrato;
         private Label lblCapacitaciones;
         private Label lblViajes;
         private PictureBox pictureBox1;
@@ -965,31 +977,26 @@
         private Button btnLicencia;
         private Button btnCondiciones;
         private Button btnCapacitaciones;
-        private Button btnContrato;
         private Button btnCURP;
-        private Button btnAnti;
+        private Button btnContrato;
         private Button btnINE;
         private Button btnComprobante;
         private Button btnApto;
         private Button btnViajes;
         private TextBox txtID;
-        private RadioButton rdbAntiSI;
+        private RadioButton rbAntiSI;
         private Label lblAnti;
-        private RadioButton rdbAntiNO;
-        private RadioButton rdbContratoNO;
-        private RadioButton rdbContratoSI;
-        private RadioButton rbdViajesNO;
-        private RadioButton rbdViajesSI;
-        private RadioButton rbdCapacitacionesNO;
-        private RadioButton rbdCapacitacionesSI;
-        private RadioButton rbdCondicionesNO;
-        private RadioButton rdbCondicionesSI;
+        private RadioButton rbViajesNO;
+        private RadioButton rbViajesSI;
+        private RadioButton rbCapacitacionesNO;
+        private RadioButton rbCapacitacionesSI;
+        private RadioButton rbContratoNO;
+        private RadioButton rbContratoSI;
         private TextBox txtViajes;
         private Panel panel1;
         private Panel panel2;
         private RadioButton rbdAptoNO;
-        private RadioButton pbOperador;
-        private Panel panel3;
+        private RadioButton rbAptoSi;
         private Panel panel4;
         private Panel panel5;
         private Panel panel6;
@@ -1003,7 +1010,6 @@
         private TextBox txtURLlicencia;
         private TextBox txtURLimagen;
         private TextBox txtURLcapacitaciones;
-        private TextBox txtURLcondiciones;
         private TextBox txtURLcontrato;
         private TextBox txtURLanti;
         private TextBox txtURLcurp;
@@ -1013,5 +1019,15 @@
         private TextBox txtURLviajes;
         private Button btnCapacitacion;
         private TextBox txtNumeroCapacitaciones;
+        private Button btnConsultar;
+        private TextBox txtLicencia;
+        private Button btnInserta;
+        private RadioButton rbAntiNO;
+        private Label label1;
+        private Button btnBuscar;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button btnReporte;
     }
 }

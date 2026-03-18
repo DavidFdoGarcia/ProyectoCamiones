@@ -32,52 +32,29 @@
             lblTipo = new Label();
             txtCamion = new TextBox();
             Evacio = new ErrorProvider(components);
+            btnConsulta = new Button();
+            btnInserta = new Button();
+            btnActualiza = new Button();
+            button1 = new Button();
             dgConsulta = new DataGridView();
             txtId = new TextBox();
             txtBuscar = new TextBox();
+            btnGenerarReporte = new Button();
             ((System.ComponentModel.ISupportInitialize)Evacio).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgConsulta).BeginInit();
             SuspendLayout();
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(736, 426);
+            btnSalir.Location = new Point(943, 414);
             btnSalir.Margin = new Padding(4, 5, 4, 5);
+            btnSalir.Size = new Size(101, 43);
             // 
-            // btnInsertar
-            // 
-            btnInsertar.Location = new Point(736, 205);
-            btnInsertar.Margin = new Padding(4, 5, 4, 5);
-            btnInsertar.Click += btnInsertar_Click;
-            // 
-            // btnConsultar
-            // 
-            btnConsultar.Location = new Point(736, 133);
-            btnConsultar.Margin = new Padding(4, 5, 4, 5);
-            btnConsultar.Click += btnConsultar_Click;
-            // 
-            // btnBaja
-            // 
-            btnBaja.Location = new Point(736, 349);
-            btnBaja.Margin = new Padding(4, 5, 4, 5);
-            btnBaja.Click += btnBaja_Click;
-            // 
-            // btnActualizar
-            // 
-            btnActualizar.Location = new Point(736, 276);
-            btnActualizar.Margin = new Padding(4, 5, 4, 5);
-            btnActualizar.Click += btnActualizar_Click;
-            // 
-            // btnBuscar
-            // 
-            btnBuscar.Location = new Point(494, 78);
-            btnBuscar.Margin = new Padding(2);
-            btnBuscar.Size = new Size(146, 29);
-            btnBuscar.Click += btnBuscar_Click;
+          
             // 
             // btnGenerar
             // 
-            btnGenerar.Location = new Point(704, 39);
+      
             // 
             // lblTipo
             // 
@@ -100,6 +77,58 @@
             // Evacio
             // 
             Evacio.ContainerControl = this;
+            // 
+            // btnConsulta
+            // 
+            btnConsulta.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Evacio.SetIconAlignment(btnConsulta, ErrorIconAlignment.BottomLeft);
+            btnConsulta.ImageAlign = ContentAlignment.BottomCenter;
+            btnConsulta.Location = new Point(943, 82);
+            btnConsulta.Name = "btnConsulta";
+            btnConsulta.Size = new Size(102, 54);
+            btnConsulta.TabIndex = 8;
+            btnConsulta.Text = "Buscar Camión";
+            btnConsulta.UseVisualStyleBackColor = true;
+            btnConsulta.Click += btnConsulta_Click;
+            // 
+            // btnInserta
+            // 
+            btnInserta.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Evacio.SetIconAlignment(btnInserta, ErrorIconAlignment.BottomLeft);
+            btnInserta.ImageAlign = ContentAlignment.BottomCenter;
+            btnInserta.Location = new Point(943, 148);
+            btnInserta.Name = "btnInserta";
+            btnInserta.Size = new Size(102, 48);
+            btnInserta.TabIndex = 9;
+            btnInserta.Text = "Nuevo Camión";
+            btnInserta.UseVisualStyleBackColor = true;
+            btnInserta.Click += btnInserta_Click;
+            // 
+            // btnActualiza
+            // 
+            btnActualiza.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Evacio.SetIconAlignment(btnActualiza, ErrorIconAlignment.BottomLeft);
+            btnActualiza.ImageAlign = ContentAlignment.BottomCenter;
+            btnActualiza.Location = new Point(943, 215);
+            btnActualiza.Name = "btnActualiza";
+            btnActualiza.Size = new Size(102, 48);
+            btnActualiza.TabIndex = 10;
+            btnActualiza.Text = "Actualizar Registro";
+            btnActualiza.UseVisualStyleBackColor = true;
+            btnActualiza.Click += btnActualiza_Click;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Evacio.SetIconAlignment(button1, ErrorIconAlignment.BottomLeft);
+            button1.ImageAlign = ContentAlignment.BottomCenter;
+            button1.Location = new Point(943, 280);
+            button1.Name = "button1";
+            button1.Size = new Size(102, 48);
+            button1.TabIndex = 11;
+            button1.Text = "Baja Camión";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // dgConsulta
             // 
@@ -129,11 +158,28 @@
             txtBuscar.TabIndex = 7;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
+            // btnGenerarReporte
+            // 
+            btnGenerarReporte.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Evacio.SetIconAlignment(btnGenerarReporte, ErrorIconAlignment.BottomLeft);
+            btnGenerarReporte.ImageAlign = ContentAlignment.BottomCenter;
+            btnGenerarReporte.Location = new Point(943, 347);
+            btnGenerarReporte.Name = "btnGenerarReporte";
+            btnGenerarReporte.Size = new Size(102, 48);
+            btnGenerarReporte.TabIndex = 12;
+            btnGenerarReporte.Text = "Generar Reporte";
+            btnGenerarReporte.UseVisualStyleBackColor = true;
+            // 
             // AltaCamiones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(905, 500);
+            ClientSize = new Size(1057, 471);
+            Controls.Add(btnGenerarReporte);
+            Controls.Add(button1);
+            Controls.Add(btnActualiza);
+            Controls.Add(btnInserta);
+            Controls.Add(btnConsulta);
             Controls.Add(txtBuscar);
             Controls.Add(txtId);
             Controls.Add(dgConsulta);
@@ -143,18 +189,20 @@
             Name = "AltaCamiones";
             Text = "Alta de Camiones";
             Load += AltaCamiones_Load;
-            Controls.SetChildIndex(btnGenerar, 0);
             Controls.SetChildIndex(lblTipo, 0);
             Controls.SetChildIndex(txtCamion, 0);
             Controls.SetChildIndex(dgConsulta, 0);
             Controls.SetChildIndex(txtId, 0);
             Controls.SetChildIndex(txtBuscar, 0);
-            Controls.SetChildIndex(btnBuscar, 0);
-            Controls.SetChildIndex(btnActualizar, 0);
-            Controls.SetChildIndex(btnBaja, 0);
-            Controls.SetChildIndex(btnConsultar, 0);
+            Controls.SetChildIndex(btnConsulta, 0);
+            Controls.SetChildIndex(btnInserta, 0);
+      
+    
             Controls.SetChildIndex(btnSalir, 0);
-            Controls.SetChildIndex(btnInsertar, 0);
+
+            Controls.SetChildIndex(btnActualiza, 0);
+            Controls.SetChildIndex(button1, 0);
+            Controls.SetChildIndex(btnGenerarReporte, 0);
             ((System.ComponentModel.ISupportInitialize)Evacio).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgConsulta).EndInit();
             ResumeLayout(false);
@@ -169,5 +217,10 @@
         private DataGridView dgConsulta;
         private TextBox txtId;
         private TextBox txtBuscar;
+        private Button btnConsulta;
+        private Button btnInserta;
+        private Button btnActualiza;
+        private Button button1;
+        private Button btnGenerarReporte;
     }
 }

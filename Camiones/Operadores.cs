@@ -89,21 +89,7 @@ namespace Camiones
 
         private void rdbAntiSI_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdbAntiSI.Checked)
-            {
-                btnAnti.Visible = true;
-            }
-            else
-            {
-                btnAnti.Visible = false;
-            }
-        }
-
-
-        private void rdbContratoSI_CheckedChanged(object sender, EventArgs e)
-        {
-
-            if (rdbContratoSI.Checked)
+            if (rbAntiSI.Checked)
             {
                 btnContrato.Visible = true;
             }
@@ -113,9 +99,23 @@ namespace Camiones
             }
         }
 
+
+        private void rdbContratoSI_CheckedChanged(object sender, EventArgs e)
+        {
+
+            /*if (rbContratoSI.Checked)
+            {
+                btnContrato.Visible = true;
+            }
+            else
+            {
+                btnContrato.Visible = false;
+            }*/
+        }
+
         private void rdbCondicionesSI_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdbCondicionesSI.Checked)
+            if (rbContratoSI.Checked)
             {
                 btnCondiciones.Visible = true;
             }
@@ -128,7 +128,7 @@ namespace Camiones
         private void rbdCapacitacionesSI_CheckedChanged(object sender, EventArgs e)
         {
 
-            if (rbdCapacitacionesSI.Checked)
+            if (rbCapacitacionesSI.Checked)
             {
                 btnCapacitaciones.Visible = true;
             }
@@ -141,7 +141,7 @@ namespace Camiones
         private void rbdViajesSI_CheckedChanged(object sender, EventArgs e)
         {
 
-            if (rbdViajesSI.Checked)
+            if (rbViajesSI.Checked)
             {
                 btnViajes.Visible = true;
                 txtViajes.Visible = true;
@@ -167,7 +167,7 @@ namespace Camiones
 
         private void rbdAptoSI_CheckedChanged(object sender, EventArgs e)
         {
-            if (pbOperador.Checked)
+            if (rbAptoSi.Checked)
             {
                 btnApto.Visible = true;
             }
@@ -187,25 +187,157 @@ namespace Camiones
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
+
+        }
+
+
+
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CargarFotoPorID(string id)
+        {
+            // Carpeta base donde están todas las carpetas de clientes
+            string carpetaBase = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "DocumentosClientes");
+
+            // Carpeta del cliente específico
+            string carpetaCliente = Path.Combine(carpetaBase, id);
+
+            if (!Directory.Exists(carpetaCliente))
+            {
+                MessageBox.Show($"No se encontró la carpeta del cliente con ID {id}.");
+                pictureBox1.Image = null;
+                return;
+            }
+
+            // Buscar cualquier archivo de imagen dentro de la carpeta del cliente
+            string[] imagenes = Directory.GetFiles(carpetaCliente)
+                .Where(f => f.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
+                            f.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase) ||
+                            f.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
+                .ToArray();
+
+            if (imagenes.Length > 0)
+            {
+                // Cargar la primera imagen encontrada en el PictureBox
+                pictureBox1.Image = System.Drawing.Image.FromFile(imagenes[0]);
+            }
+            else
+            {
+                MessageBox.Show($"No se encontró ninguna foto en la carpeta del cliente con ID {id}.");
+                pictureBox1.Image = null;
+            }
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCapacitacion_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog abrir = new OpenFileDialog())
+            {
+                if (abrir.ShowDialog() == DialogResult.OK)
+                {
+                    Clsoperador.GuardarCapacitacion(txtID.Text, abrir.FileName);
+                }
+            }
+            string query = @"UPDATE dbo.operador
+                         SET capacitaciones = @capacitacion
+                         WHERE idoperador = @id";
+
+            var parametros = new Dictionary<string, object>()
+        {
+            { "@capacitacion", txtNumeroCapacitaciones.Text },
+            { "@id", txtID.Text }
+        };
+
+            int filas = Consultas.Ejecutar(query, parametros);
+
+            if (filas > 0)
+            {
+                MessageBox.Show("Registro actualizado correctamente");
+
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)  //boton select
+        {
+            string query = "SELECT * FROM operador WHERE idoperador = @id";
+
+            Dictionary<string, object> parametros = new Dictionary<string, object>()
+    {
+        { "@id", txtID.Text }
+    };
+
+            DataTable dt = Consultas.Consultar(query, parametros);
+
+            if (dt.Rows.Count > 0)
+            {
+                txtNombre.Text = dt.Rows[0]["nombreoperador"].ToString();
+                txtPaterno.Text = dt.Rows[0]["apellidopoperador"].ToString();
+                txtMaterno.Text = dt.Rows[0]["apellidomoperador"].ToString();
+                txtLicencia.Text = dt.Rows[0]["licencia"].ToString();
+                txtINE.Text = dt.Rows[0]["ine"].ToString();
+                TXTcurp.Text = dt.Rows[0]["curp"].ToString();
+                txtDomicilio.Text = dt.Rows[0]["comprobantedomicilio"].ToString();
+                bool apto = Convert.ToBoolean(dt.Rows[0]["aptomedico"]); //Asegúrate de que el campo "aptomedico" en la BD sea bit 
+                rbAptoSi.Checked = apto;
+                rbdAptoNO.Checked = !apto;
+                bool anti = Convert.ToBoolean(dt.Rows[0]["antidoping"]);
+                rbAntiSI.Checked = anti;
+                rbAntiNO.Checked = !anti;
+                bool contrato = Convert.ToBoolean(dt.Rows[0]["contratolaboral"]);
+                rbContratoSI.Checked = contrato;
+                rbContratoNO.Checked = !contrato;
+                bool capacitaciones = Convert.ToBoolean(dt.Rows[0]["capacitaciones"]);
+                rbCapacitacionesSI.Checked = contrato;
+                rbCapacitacionesNO.Checked = !contrato;
+                txtViajes.Text = dt.Rows[0]["viajes"].ToString();
+                txtURLimagen.Text = dt.Rows[0]["fotooperador"].ToString();
+            }
+            else
+            {
+                MessageBox.Show("No se encontró el registro.");
+            }
+            CargarFotoPorID(txtID.Text);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInserta_Click(object sender, EventArgs e)
+        {
             try
             {
-                string query = "INSERT INTO dbo.operador (nombreoperador,apellidomoperador,apellidopoperador,licencia,aptomedico,comprobantedomicilio,ine,curp,antidoping,contratolaboral,condiciones,capacitaciones,viajes,fotooperador) VALUES (@nombreoperador,@apellidomoperador,@apellidopoperador,@licencia,@aptomedico,@comprobantedomicilio,@ine,@curp,@antidoping,@contratolaboral,@condiciones,@capacitaciones,@viajes,@fotooperador)";
+
+                string query = "INSERT INTO dbo.operador (nombreoperador,apellidomoperador,apellidopoperador,licencia,aptomedico,comprobantedomicilio,ine,curp,antidoping,contratolaboral,capacitaciones,viajes,fotooperador) VALUES (@nombreoperador,@apellidomoperador,@apellidopoperador,@licencia,@aptomedico,@comprobantedomicilio,@ine,@curp,@antidoping,@contratolaboral,@capacitaciones,@viajes,@fotooperador)";
+
+                bool apto = rbAptoSi.Checked;
+                bool anti = rbAntiSI.Checked;
+                bool contrato = rbContratoSI.Checked;
+                bool capacitacion = rbCapacitacionesSI.Checked;
 
                 var parametros = new Dictionary<string, object>()
         {
             { "@nombreoperador", txtNombre.Text },
             { "@apellidomoperador", txtMaterno.Text },
             { "@apellidopoperador", txtPaterno.Text },
-            { "@licencia", txtURLlicencia.Text },
-            { "@aptomedico", txtURLapto.Text },
+            { "@licencia", txtLicencia.Text },
+            { "@aptomedico", apto },
             { "@comprobantedomicilio", txtDomicilio.Text },
             { "@ine", txtINE.Text },
             { "@curp", TXTcurp.Text },
-            { "@antidoping", txtURLanti.Text },
-            { "@contratolaboral", txtURLcontrato.Text },
-            { "@condiciones", txtURLcondiciones.Text },
-            { "@capacitaciones", txtURLcapacitaciones.Text },
-            { "@viajes", txtURLviajes.Text },
+            { "@antidoping", anti },
+            { "@contratolaboral", contrato },
+            { "@capacitaciones", capacitacion },
+            { "@viajes", txtViajes.Text },
             { "@fotooperador", txtURLimagen.Text }
         };
 
@@ -215,12 +347,27 @@ namespace Camiones
             {
                 MessageBox.Show(ex.Message);
             }
+            btnConsultar.Enabled = false;
+            txtID.Enabled = false;
         }
 
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void btnBaja_Click(object sender, EventArgs e)
+        {
 
-        private void btnGenerar_Click(object sender, EventArgs e)
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            btnConsultar.Enabled = true;
+            txtID.Enabled = true;
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
         {
             // 1️⃣ Convertir la imagen del PictureBox a byte[]
             byte[] imagenBytes = null;
@@ -233,7 +380,7 @@ namespace Camiones
                 }
             }
             // Resultado de antidoping desde RadioButton
-            string resultadoAntidoping = rdbAntiSI.Checked ? "✅ Aprobado" : "❌ No aprobado";
+            string resultadoAntidoping = rbAntiSI.Checked ? "✅ Aprobado" : "❌ No aprobado";
 
 
             // 2️⃣ Crear PDF
@@ -315,97 +462,8 @@ namespace Camiones
 
             MessageBox.Show($"PDF generado correctamente en: {rutaCompleta}");
         }
-
-        private void CargarFotoPorID(string id)
-        {
-            // Carpeta base donde están todas las carpetas de clientes
-            string carpetaBase = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "DocumentosClientes");
-
-            // Carpeta del cliente específico
-            string carpetaCliente = Path.Combine(carpetaBase, id);
-
-            if (!Directory.Exists(carpetaCliente))
-            {
-                MessageBox.Show($"No se encontró la carpeta del cliente con ID {id}.");
-                pictureBox1.Image = null;
-                return;
-            }
-
-            // Buscar cualquier archivo de imagen dentro de la carpeta del cliente
-            string[] imagenes = Directory.GetFiles(carpetaCliente)
-                .Where(f => f.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
-                            f.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase) ||
-                            f.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
-                .ToArray();
-
-            if (imagenes.Length > 0)
-            {
-                // Cargar la primera imagen encontrada en el PictureBox
-                pictureBox1.Image = System.Drawing.Image.FromFile(imagenes[0]);
-            }
-            else
-            {
-                MessageBox.Show($"No se encontró ninguna foto en la carpeta del cliente con ID {id}.");
-                pictureBox1.Image = null;
-            }
-        }
-
-        private void btnConsultar_Click(object sender, EventArgs e)
-        {
-            string query = "SELECT * FROM operador WHERE idoperador = @id";
-
-            Dictionary<string, object> parametros = new Dictionary<string, object>()
-    {
-        { "@id", txtID.Text }
-    };
-
-            DataTable dt = Consultas.Consultar(query, parametros);
-
-            if (dt.Rows.Count > 0)
-            {
-                txtNombre.Text = dt.Rows[0]["nombreoperador"].ToString();
-                txtPaterno.Text = dt.Rows[0]["apellidopoperador"].ToString();
-                txtMaterno.Text = dt.Rows[0]["apellidomoperador"].ToString();
-                txtINE.Text = dt.Rows[0]["licencia"].ToString();
-                TXTcurp.Text = dt.Rows[0]["curp"].ToString();
-                txtDomicilio.Text = dt.Rows[0]["comprobantedomicilio"].ToString();
-            }
-            else
-            {
-                MessageBox.Show("No se encontró el registro.");
-            }
-            CargarFotoPorID(txtID.Text);
-        }
-
-        private void btnCapacitacion_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog abrir = new OpenFileDialog())
-            {
-                if (abrir.ShowDialog() == DialogResult.OK)
-                {
-                    Clsoperador.GuardarCapacitacion(txtID.Text, abrir.FileName);
-                }
-            }
-            string query = @"UPDATE dbo.operador
-                         SET capacitaciones = @capacitacion
-                         WHERE idoperador = @id";
-
-            var parametros = new Dictionary<string, object>()
-        {
-            { "@capacitacion", txtNumeroCapacitaciones.Text },
-            { "@id", txtID.Text }
-        };
-
-            int filas = Consultas.Ejecutar(query, parametros);
-
-            if (filas > 0)
-            {
-                MessageBox.Show("Registro actualizado correctamente");
-
-            }
-        }
     }
-    }
+}
 
 
 
