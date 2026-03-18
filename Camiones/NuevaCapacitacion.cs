@@ -58,7 +58,7 @@ namespace Camiones
                     int nuevoValor = valorActual + 1;
 
                     // 🔥 3. MOSTRAR en textbox
-                    txtCap.Text = nuevoValor.ToString();
+                    txtNumero.Text = nuevoValor.ToString();
 
                     // 🔥 4. ACTUALIZAR BD
                     string queryUpdate = @"UPDATE operador 
