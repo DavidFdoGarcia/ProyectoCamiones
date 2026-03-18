@@ -37,7 +37,7 @@ namespace Camiones
 
         private void btnApto_Click(object sender, EventArgs e)
         {
-            // Clsoperador.SubirDoumento(txtID.Text,txtapto);
+            Clsoperador.SubirDoumento(txtID.Text, txtURLapto);
         }
 
         private void btnComprobante_Click(object sender, EventArgs e)
@@ -57,24 +57,17 @@ namespace Camiones
 
         private void btnAnti_Click(object sender, EventArgs e)
         {
-
-
-            // Clsoperador.SubirDoumento(txtID.Text);
+            Clsoperador.SubirDoumento(txtID.Text, txtURLanti);
         }
 
         private void btnContrato_Click(object sender, EventArgs e)
         {
-            //Clsoperador.SubirDoumento(txtID.Text);
-        }
-
-        private void btnCondiciones_Click(object sender, EventArgs e)
-        {
-            //Clsoperador.SubirDoumento(txtID.Text);
+            Clsoperador.SubirDoumento(txtID.Text, txtURLcontrato);
         }
 
         private void btnCapacitaciones_Click(object sender, EventArgs e)
         {
-            //Clsoperador.SubirDoumento(txtID.Text);
+            Clsoperador.SubirCapacitacion(txtID.Text, txtURLcapacitaciones);
         }
 
         private void btnViajes_Click(object sender, EventArgs e)
@@ -91,11 +84,11 @@ namespace Camiones
         {
             if (rbAntiSI.Checked)
             {
-                btnContrato.Visible = true;
+                btnAnti.Visible = true;
             }
             else
             {
-                btnContrato.Visible = false;
+                btnAnti.Visible = false;
             }
         }
 
@@ -103,25 +96,13 @@ namespace Camiones
         private void rdbContratoSI_CheckedChanged(object sender, EventArgs e)
         {
 
-            /*if (rbContratoSI.Checked)
-            {
-                btnContrato.Visible = true;
-            }
-            else
-            {
-                btnContrato.Visible = false;
-            }*/
-        }
-
-        private void rdbCondicionesSI_CheckedChanged(object sender, EventArgs e)
-        {
             if (rbContratoSI.Checked)
             {
-                btnCondiciones.Visible = true;
+                btnAnti.Visible = true;
             }
             else
             {
-                btnCondiciones.Visible = false;
+                btnAnti.Visible = false;
             }
         }
 
@@ -296,9 +277,7 @@ namespace Camiones
                 bool contrato = Convert.ToBoolean(dt.Rows[0]["contratolaboral"]);
                 rbContratoSI.Checked = contrato;
                 rbContratoNO.Checked = !contrato;
-                bool capacitaciones = Convert.ToBoolean(dt.Rows[0]["capacitaciones"]);
-                rbCapacitacionesSI.Checked = contrato;
-                rbCapacitacionesNO.Checked = !contrato;
+                txtNumeroCapacitaciones.Text = dt.Rows[0]["capacitaciones"].ToString();
                 txtViajes.Text = dt.Rows[0]["viajes"].ToString();
                 txtURLimagen.Text = dt.Rows[0]["fotooperador"].ToString();
             }
@@ -324,7 +303,7 @@ namespace Camiones
                 bool apto = rbAptoSi.Checked;
                 bool anti = rbAntiSI.Checked;
                 bool contrato = rbContratoSI.Checked;
-                
+
 
                 var parametros = new Dictionary<string, object>()
         {
@@ -471,6 +450,33 @@ namespace Camiones
             documento.GeneratePdf(rutaPDF);
 
             MessageBox.Show("Reporte guardado correctamente en: " + rutaPDF);
+        }
+
+        private void btnContrato_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbContratoSI_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbContratoSI.Checked)
+            {
+                btnContrato.Visible = true;
+            }
+            else
+            {
+                btnContrato.Visible = false;
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

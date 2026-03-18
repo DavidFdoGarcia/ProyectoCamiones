@@ -36,12 +36,17 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
+            // btnSalir
+            // 
+            btnSalir.Location = new Point(379, 156);
+            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(102, 99);
+            label1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(39, 91);
             label1.Name = "label1";
-            label1.Size = new Size(90, 15);
+            label1.Size = new Size(128, 19);
             label1.TabIndex = 0;
             label1.Text = "ID del Operador";
             label1.Click += label1_Click;
@@ -55,17 +60,18 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(441, 64);
+            pictureBox1.Location = new Point(12, 129);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(222, 143);
+            pictureBox1.Size = new Size(132, 77);
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
             // btnCapacitacion
             // 
-            btnCapacitacion.Location = new Point(297, 290);
+            btnCapacitacion.Font = new Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCapacitacion.Location = new Point(379, 69);
             btnCapacitacion.Name = "btnCapacitacion";
-            btnCapacitacion.Size = new Size(134, 54);
+            btnCapacitacion.Size = new Size(140, 61);
             btnCapacitacion.TabIndex = 3;
             btnCapacitacion.Text = "Agregar Capacitacion";
             btnCapacitacion.UseVisualStyleBackColor = true;
@@ -73,7 +79,7 @@
             // 
             // txtCap
             // 
-            txtCap.Location = new Point(229, 215);
+            txtCap.Location = new Point(229, 156);
             txtCap.Name = "txtCap";
             txtCap.Size = new Size(100, 23);
             txtCap.TabIndex = 4;
@@ -82,7 +88,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(561, 254);
             Controls.Add(txtCap);
             Controls.Add(btnCapacitacion);
             Controls.Add(pictureBox1);
@@ -91,6 +97,12 @@
             Name = "NuevaCapacitacion";
             Text = "NuevaCapacitacion";
             Load += NuevaCapacitacion_Load;
+            Controls.SetChildIndex(label1, 0);
+            Controls.SetChildIndex(txtID, 0);
+            Controls.SetChildIndex(pictureBox1, 0);
+            Controls.SetChildIndex(btnCapacitacion, 0);
+            Controls.SetChildIndex(txtCap, 0);
+            Controls.SetChildIndex(btnSalir, 0);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

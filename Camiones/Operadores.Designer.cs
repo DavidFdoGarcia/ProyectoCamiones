@@ -45,10 +45,10 @@
             pictureBox1 = new PictureBox();
             openFileDialog1 = new OpenFileDialog();
             btnLicencia = new Button();
-            btnCondiciones = new Button();
+            btnContrato = new Button();
             btnCapacitaciones = new Button();
             btnCURP = new Button();
-            btnContrato = new Button();
+            btnAnti = new Button();
             btnINE = new Button();
             btnComprobante = new Button();
             btnApto = new Button();
@@ -95,7 +95,6 @@
             btnInserta = new Button();
             label1 = new Label();
             btnBuscar = new Button();
-            button1 = new Button();
             button2 = new Button();
             button3 = new Button();
             btnReporte = new Button();
@@ -110,9 +109,9 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(875, 525);
+            btnSalir.Location = new Point(1033, 488);
             btnSalir.Margin = new Padding(4, 5, 4, 5);
-            btnSalir.Size = new Size(151, 35);
+            btnSalir.Size = new Size(98, 48);
             // 
             // lblNombre
             // 
@@ -280,16 +279,16 @@
             btnLicencia.Visible = false;
             btnLicencia.Click += btnLicencia_Click;
             // 
-            // btnCondiciones
+            // btnContrato
             // 
-            btnCondiciones.Location = new Point(158, 11);
-            btnCondiciones.Name = "btnCondiciones";
-            btnCondiciones.Size = new Size(96, 25);
-            btnCondiciones.TabIndex = 24;
-            btnCondiciones.Text = "Subir";
-            btnCondiciones.UseVisualStyleBackColor = true;
-            btnCondiciones.Visible = false;
-            btnCondiciones.Click += btnCondiciones_Click;
+            btnContrato.Location = new Point(158, 11);
+            btnContrato.Name = "btnContrato";
+            btnContrato.Size = new Size(96, 25);
+            btnContrato.TabIndex = 24;
+            btnContrato.Text = "Subir";
+            btnContrato.UseVisualStyleBackColor = true;
+            btnContrato.Visible = false;
+            btnContrato.Click += btnContrato_Click_1;
             // 
             // btnCapacitaciones
             // 
@@ -312,16 +311,16 @@
             btnCURP.UseVisualStyleBackColor = true;
             btnCURP.Click += btnCURP_Click;
             // 
-            // btnContrato
+            // btnAnti
             // 
-            btnContrato.Location = new Point(157, 8);
-            btnContrato.Name = "btnContrato";
-            btnContrato.Size = new Size(96, 25);
-            btnContrato.TabIndex = 28;
-            btnContrato.Text = "Subir";
-            btnContrato.UseVisualStyleBackColor = true;
-            btnContrato.Visible = false;
-            btnContrato.Click += btnAnti_Click;
+            btnAnti.Location = new Point(157, 8);
+            btnAnti.Name = "btnAnti";
+            btnAnti.Size = new Size(96, 25);
+            btnAnti.TabIndex = 28;
+            btnAnti.Text = "Subir";
+            btnAnti.UseVisualStyleBackColor = true;
+            btnAnti.Visible = false;
+            btnAnti.Click += btnAnti_Click;
             // 
             // btnINE
             // 
@@ -335,7 +334,7 @@
             // 
             // btnComprobante
             // 
-            btnComprobante.Location = new Point(605, 259);
+            btnComprobante.Location = new Point(605, 273);
             btnComprobante.Name = "btnComprobante";
             btnComprobante.Size = new Size(94, 25);
             btnComprobante.TabIndex = 30;
@@ -456,7 +455,7 @@
             rbContratoSI.TabIndex = 42;
             rbContratoSI.Text = "SI";
             rbContratoSI.UseVisualStyleBackColor = true;
-            rbContratoSI.CheckedChanged += rdbCondicionesSI_CheckedChanged;
+            rbContratoSI.CheckedChanged += rbContratoSI_CheckedChanged;
             // 
             // txtViajes
             // 
@@ -471,7 +470,7 @@
             // 
             panel1.Controls.Add(rbAntiNO);
             panel1.Controls.Add(rbAntiSI);
-            panel1.Controls.Add(btnContrato);
+            panel1.Controls.Add(btnAnti);
             panel1.Location = new Point(202, 373);
             panel1.Name = "panel1";
             panel1.Size = new Size(264, 38);
@@ -548,7 +547,7 @@
             // panel6
             // 
             panel6.BackColor = SystemColors.MenuBar;
-            panel6.Controls.Add(btnCondiciones);
+            panel6.Controls.Add(btnContrato);
             panel6.Controls.Add(rbContratoSI);
             panel6.Controls.Add(rbContratoNO);
             panel6.Location = new Point(247, 450);
@@ -782,30 +781,21 @@
             btnBuscar.UseVisualStyleBackColor = true;
             btnBuscar.Click += btnBuscar_Click;
             // 
-            // button1
-            // 
-            button1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(1035, 296);
-            button1.Name = "button1";
-            button1.Size = new Size(96, 47);
-            button1.TabIndex = 72;
-            button1.Text = "Nuevo Operador";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
             button2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(1035, 358);
+            button2.Location = new Point(1035, 296);
             button2.Name = "button2";
             button2.Size = new Size(96, 47);
             button2.TabIndex = 73;
             button2.Text = "Actualizar Operador";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
             button3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(1035, 423);
+            button3.Location = new Point(1035, 361);
             button3.Name = "button3";
             button3.Size = new Size(96, 47);
             button3.TabIndex = 74;
@@ -815,7 +805,7 @@
             // btnReporte
             // 
             btnReporte.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnReporte.Location = new Point(1033, 487);
+            btnReporte.Location = new Point(1033, 425);
             btnReporte.Name = "btnReporte";
             btnReporte.Size = new Size(96, 47);
             btnReporte.TabIndex = 76;
@@ -833,7 +823,6 @@
             Controls.Add(btnReporte);
             Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(btnBuscar);
             Controls.Add(label1);
             Controls.Add(btnInserta);
@@ -933,7 +922,6 @@
             Controls.SetChildIndex(label1, 0);
             Controls.SetChildIndex(btnSalir, 0);
             Controls.SetChildIndex(btnBuscar, 0);
-            Controls.SetChildIndex(button1, 0);
             Controls.SetChildIndex(button2, 0);
             Controls.SetChildIndex(button3, 0);
             Controls.SetChildIndex(btnReporte, 0);
@@ -973,10 +961,10 @@
         private PictureBox pictureBox1;
         private OpenFileDialog openFileDialog1;
         private Button btnLicencia;
-        private Button btnCondiciones;
+        private Button btnContrato;
         private Button btnCapacitaciones;
         private Button btnCURP;
-        private Button btnContrato;
+        private Button btnAnti;
         private Button btnINE;
         private Button btnComprobante;
         private Button btnApto;
@@ -1023,7 +1011,6 @@
         private RadioButton rbAntiNO;
         private Label label1;
         private Button btnBuscar;
-        private Button button1;
         private Button button2;
         private Button button3;
         private Button btnReporte;

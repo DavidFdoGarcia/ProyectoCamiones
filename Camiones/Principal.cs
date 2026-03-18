@@ -22,8 +22,8 @@ namespace Camiones
 
         private void btnOperador_Click(object sender, EventArgs e)
         {
-            Operadores op = new Operadores();
-            op.Show();
+            MenuOperador mo = new MenuOperador();
+            mo.Show();
         }
 
         private void btnAltaCamiones_Click(object sender, EventArgs e)
