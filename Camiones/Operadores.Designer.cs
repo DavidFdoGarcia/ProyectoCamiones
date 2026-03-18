@@ -113,7 +113,6 @@
             btnSalir.Location = new Point(875, 525);
             btnSalir.Margin = new Padding(4, 5, 4, 5);
             btnSalir.Size = new Size(151, 35);
-        
             // 
             // lblNombre
             // 
@@ -723,7 +722,7 @@
             // 
             // txtNumeroCapacitaciones
             // 
-            txtNumeroCapacitaciones.Location = new Point(722, 535);
+            txtNumeroCapacitaciones.Location = new Point(692, 503);
             txtNumeroCapacitaciones.Name = "txtNumeroCapacitaciones";
             txtNumeroCapacitaciones.PlaceholderText = "numero capacitaciones";
             txtNumeroCapacitaciones.Size = new Size(80, 23);
@@ -932,7 +931,6 @@
             Controls.SetChildIndex(txtLicencia, 0);
             Controls.SetChildIndex(btnInserta, 0);
             Controls.SetChildIndex(label1, 0);
-           
             Controls.SetChildIndex(btnSalir, 0);
             Controls.SetChildIndex(btnBuscar, 0);
             Controls.SetChildIndex(button1, 0);

@@ -131,10 +131,12 @@ namespace Camiones
             if (rbCapacitacionesSI.Checked)
             {
                 btnCapacitaciones.Visible = true;
+                txtNumeroCapacitaciones.Visible = true;
             }
             else
             {
                 btnCapacitaciones.Visible = false;
+                txtNumeroCapacitaciones.Visible = false;
             }
         }
 
@@ -149,7 +151,7 @@ namespace Camiones
             else
             {
                 btnViajes.Visible = false;
-                txtViajes.Visible = true;
+                txtViajes.Visible = false;
             }
         }
 
@@ -322,7 +324,7 @@ namespace Camiones
                 bool apto = rbAptoSi.Checked;
                 bool anti = rbAntiSI.Checked;
                 bool contrato = rbContratoSI.Checked;
-                bool capacitacion = rbCapacitacionesSI.Checked;
+                
 
                 var parametros = new Dictionary<string, object>()
         {
@@ -336,7 +338,7 @@ namespace Camiones
             { "@curp", TXTcurp.Text },
             { "@antidoping", anti },
             { "@contratolaboral", contrato },
-            { "@capacitaciones", capacitacion },
+            { "@capacitaciones", txtNumeroCapacitaciones.Text },
             { "@viajes", txtViajes.Text },
             { "@fotooperador", txtURLimagen.Text }
         };
@@ -369,7 +371,7 @@ namespace Camiones
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
-            // 1️⃣ Convertir la imagen del PictureBox a byte[]
+            // 1️⃣ Convertir imagen a byte[]
             byte[] imagenBytes = null;
             if (pictureBox1.Image != null)
             {
@@ -379,11 +381,13 @@ namespace Camiones
                     imagenBytes = ms.ToArray();
                 }
             }
-            // Resultado de antidoping desde RadioButton
+
+            // Resultado antidoping
             string resultadoAntidoping = rbAntiSI.Checked ? "✅ Aprobado" : "❌ No aprobado";
 
+            string resultadoContrato = rbContratoSI.Checked ? "✅ Aprobado" : "❌ No aprobado";
 
-            // 2️⃣ Crear PDF
+            // 2️⃣ Crear documento PDF
             var documento = Document.Create(container =>
             {
                 container.Page(page =>
@@ -402,65 +406,71 @@ namespace Camiones
                     {
                         column.Item().Row(row =>
                         {
-                            // Datos a la izquierda
                             row.RelativeItem().Column(innerColumn =>
                             {
                                 innerColumn.Item().Text($"ID: {txtID.Text}");
                                 innerColumn.Item().Text($"Nombre: {txtNombre.Text}");
                                 innerColumn.Item().Text($"Apellido Paterno: {txtPaterno.Text}");
                                 innerColumn.Item().Text($"Apellido Materno: {txtMaterno.Text}");
+                                innerColumn.Item().Text($"Domicilio: {txtDomicilio.Text}");
+                                innerColumn.Item().Text($"INE: {txtINE.Text}");
+                                innerColumn.Item().Text($"CURP: {TXTcurp.Text}");
+                                innerColumn.Item().Text($"Licencia: {txtLicencia.Text}");
                                 innerColumn.Item().Text($"Antidoping: {resultadoAntidoping}");
+                                innerColumn.Item().Text($"Contrato Laboral: {resultadoContrato}");
+                                innerColumn.Item().Text($"Capacitaciones: {txtNumeroCapacitaciones.Text}");
+                                innerColumn.Item().Text($"Viajes: {txtViajes.Text}");
                             });
-                            // Espacio entre columnas
-                            row.ConstantItem(20); // Esto crea un "espaciador" de 20 puntos entre datos y foto
 
-                            // Foto a la derecha    
+                            row.ConstantItem(20);
+
                             if (imagenBytes != null)
                             {
                                 row.ConstantItem(150).Element(container =>
                                 {
-                                    if (imagenBytes != null)
-                                        container
-                                            .AlignCenter()
-                                            .MaxWidth(150)   // ancho máximo
-                                            .MaxHeight(150)  // alto máximo
-                                            .Image(imagenBytes, ImageScaling.FitArea);
+                                    container.AlignCenter()
+                                             .MaxWidth(150)
+                                             .MaxHeight(150)
+                                             .Image(imagenBytes, ImageScaling.FitArea);
                                 });
                             }
-
-
-                            /*
-                            // Antidoping con ✅/❌
-                            string resultado = txtAntidoping.Text == "Aprobado" ? "✅ Aprobado" : "❌ No aprobado";
-                            innerColumn.Item().Text($"Antidoping: {resultado}");
-
-                            innerColumn.Item().Text($"Licencia: {txtLicencia.Text}");
-                            innerColumn.Item().Text($"CURP: {TXTcurp.Text}");
-                            innerColumn.Item().Text($"Comprobante Domicilio: {txtDomicilio.Text}");
-                            innerColumn.Item().Text($"Contrato Laboral: {txtContrato.Text}");
-                            innerColumn.Item().Text($"Condiciones: {txtCondiciones.Text}");
-                            innerColumn.Item().Text($"Capacitaciones: {txtCapacitaciones.Text}");
-                            innerColumn.Item().Text($"Viajes: {txtViajes.Text}"); */
                         });
                     });
 
-
-                    // Pie de página
                     page.Footer().AlignCenter().Text($"Fecha: {DateTime.Now.ToShortDateString()}");
                 });
             });
 
-            // 3️⃣ Guardar PDF en carpeta del escritorio usando ID
-            string nombreArchivo = $"ReporteCamiones_{txtID.Text}.pdf";
-            string carpeta = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "ReportesCamiones");
+            // 3️⃣ Preparar carpetas
+            string idCliente = txtID.Text;
+            string rutaBase = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "DocumentosClientes");
+            string carpetaCliente = Path.Combine(rutaBase, idCliente);
+            string carpetaReportes = Path.Combine(carpetaCliente, "Reportes");
 
-            if (!Directory.Exists(carpeta))
-                Directory.CreateDirectory(carpeta);
+            Directory.CreateDirectory(carpetaCliente);
+            Directory.CreateDirectory(carpetaReportes);
 
-            string rutaCompleta = Path.Combine(carpeta, nombreArchivo);
-            documento.GeneratePdf(rutaCompleta);
+            string nombreArchivo = "Reporte.pdf";
+            string rutaPDF = Path.Combine(carpetaReportes, nombreArchivo);
 
-            MessageBox.Show($"PDF generado correctamente en: {rutaCompleta}");
+            // 4️⃣ Verificar si el PDF ya existe
+            if (File.Exists(rutaPDF))
+            {
+                DialogResult resultado = MessageBox.Show(
+                    "El reporte ya existe. ¿Deseas sobrescribirlo?",
+                    "Confirmar sobrescritura",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (resultado == DialogResult.No)
+                    return; // cancelar
+            }
+
+            // 5️⃣ Guardar PDF (¡usar el documento ya creado!)
+            documento.GeneratePdf(rutaPDF);
+
+            MessageBox.Show("Reporte guardado correctamente en: " + rutaPDF);
         }
     }
 }

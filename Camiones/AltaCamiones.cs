@@ -54,7 +54,7 @@ namespace Camiones
             {
                 txtId.Text = dgConsulta.CurrentRow.Cells["idcamion"].Value.ToString();
                 txtCamion.Text = dgConsulta.CurrentRow.Cells["tipocamion"].Value.ToString();
-              //  btnBaja.Visible = true;
+                //  btnBaja.Visible = true;
             }
         }
 
@@ -246,6 +246,11 @@ namespace Camiones
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void btnGenerarReporte_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

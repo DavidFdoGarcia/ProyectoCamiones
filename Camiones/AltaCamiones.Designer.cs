@@ -36,10 +36,10 @@
             btnInserta = new Button();
             btnActualiza = new Button();
             button1 = new Button();
+            btnGenerarReporte = new Button();
             dgConsulta = new DataGridView();
             txtId = new TextBox();
             txtBuscar = new TextBox();
-            btnGenerarReporte = new Button();
             ((System.ComponentModel.ISupportInitialize)Evacio).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgConsulta).BeginInit();
             SuspendLayout();
@@ -49,12 +49,6 @@
             btnSalir.Location = new Point(943, 414);
             btnSalir.Margin = new Padding(4, 5, 4, 5);
             btnSalir.Size = new Size(101, 43);
-            // 
-          
-            // 
-            // btnGenerar
-            // 
-      
             // 
             // lblTipo
             // 
@@ -130,6 +124,19 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // btnGenerarReporte
+            // 
+            btnGenerarReporte.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Evacio.SetIconAlignment(btnGenerarReporte, ErrorIconAlignment.BottomLeft);
+            btnGenerarReporte.ImageAlign = ContentAlignment.BottomCenter;
+            btnGenerarReporte.Location = new Point(943, 347);
+            btnGenerarReporte.Name = "btnGenerarReporte";
+            btnGenerarReporte.Size = new Size(102, 48);
+            btnGenerarReporte.TabIndex = 12;
+            btnGenerarReporte.Text = "Generar Reporte";
+            btnGenerarReporte.UseVisualStyleBackColor = true;
+            btnGenerarReporte.Click += btnGenerarReporte_Click;
+            // 
             // dgConsulta
             // 
             dgConsulta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -158,18 +165,6 @@
             txtBuscar.TabIndex = 7;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
-            // btnGenerarReporte
-            // 
-            btnGenerarReporte.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Evacio.SetIconAlignment(btnGenerarReporte, ErrorIconAlignment.BottomLeft);
-            btnGenerarReporte.ImageAlign = ContentAlignment.BottomCenter;
-            btnGenerarReporte.Location = new Point(943, 347);
-            btnGenerarReporte.Name = "btnGenerarReporte";
-            btnGenerarReporte.Size = new Size(102, 48);
-            btnGenerarReporte.TabIndex = 12;
-            btnGenerarReporte.Text = "Generar Reporte";
-            btnGenerarReporte.UseVisualStyleBackColor = true;
-            // 
             // AltaCamiones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -196,10 +191,7 @@
             Controls.SetChildIndex(txtBuscar, 0);
             Controls.SetChildIndex(btnConsulta, 0);
             Controls.SetChildIndex(btnInserta, 0);
-      
-    
             Controls.SetChildIndex(btnSalir, 0);
-
             Controls.SetChildIndex(btnActualiza, 0);
             Controls.SetChildIndex(button1, 0);
             Controls.SetChildIndex(btnGenerarReporte, 0);
