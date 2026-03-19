@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Camiones.formMantenimientos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,12 @@ namespace Camiones
         {
             AltaCamiones AC = new AltaCamiones();
             AC.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MenuManteenimiento MM = new MenuManteenimiento();
+            MM.Show();
         }
     }
 }

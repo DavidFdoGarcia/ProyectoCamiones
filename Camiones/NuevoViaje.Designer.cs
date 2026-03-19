@@ -28,39 +28,103 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            btnAgregarViaje = new Button();
+            label2 = new Label();
+            label3 = new Label();
+            txtID = new TextBox();
+            txtViajes = new TextBox();
+            txtNumero = new TextBox();
             SuspendLayout();
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(586, 303);
+            btnSalir.Location = new Point(253, 172);
             // 
-            // button1
+            // btnAgregarViaje
             // 
-            button1.Location = new Point(594, 311);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnAgregarViaje.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAgregarViaje.Location = new Point(101, 172);
+            btnAgregarViaje.Name = "btnAgregarViaje";
+            btnAgregarViaje.Size = new Size(100, 48);
+            btnAgregarViaje.TabIndex = 1;
+            btnAgregarViaje.Text = "Agregar Viaje";
+            btnAgregarViaje.UseVisualStyleBackColor = true;
+            btnAgregarViaje.Click += button1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(58, 37);
+            label2.Name = "label2";
+            label2.Size = new Size(173, 19);
+            label2.TabIndex = 3;
+            label2.Text = "Numero del Operador";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(58, 95);
+            label3.Name = "label3";
+            label3.Size = new Size(143, 19);
+            label3.TabIndex = 4;
+            label3.Text = "Numero de Viajes";
+            // 
+            // txtID
+            // 
+            txtID.Location = new Point(293, 33);
+            txtID.Name = "txtID";
+            txtID.Size = new Size(100, 23);
+            txtID.TabIndex = 5;
+            // 
+            // txtViajes
+            // 
+            txtViajes.Location = new Point(270, 143);
+            txtViajes.Name = "txtViajes";
+            txtViajes.Size = new Size(100, 23);
+            txtViajes.TabIndex = 6;
+            txtViajes.Visible = false;
+            // 
+            // txtNumero
+            // 
+            txtNumero.Location = new Point(253, 95);
+            txtNumero.Name = "txtNumero";
+            txtNumero.Size = new Size(100, 23);
+            txtNumero.TabIndex = 7;
             // 
             // NuevoViaje
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            ClientSize = new Size(417, 249);
+            Controls.Add(txtNumero);
+            Controls.Add(txtViajes);
+            Controls.Add(txtID);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(btnAgregarViaje);
             Name = "NuevoViaje";
             Text = "NuevoViaje";
             Load += NuevoViaje_Load;
+            Controls.SetChildIndex(btnAgregarViaje, 0);
+            Controls.SetChildIndex(label2, 0);
+            Controls.SetChildIndex(label3, 0);
             Controls.SetChildIndex(btnSalir, 0);
-            Controls.SetChildIndex(button1, 0);
+            Controls.SetChildIndex(txtID, 0);
+            Controls.SetChildIndex(txtViajes, 0);
+            Controls.SetChildIndex(txtNumero, 0);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
+        private Button btnAgregarViaje;
+        private Label label2;
+        private Label label3;
+        private TextBox txtID;
+        private TextBox txtViajes;
+        private TextBox txtNumero;
     }
 }

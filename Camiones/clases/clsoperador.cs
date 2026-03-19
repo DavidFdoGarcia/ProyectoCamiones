@@ -134,6 +134,53 @@ namespace Camiones.clases
                 }
             }
         }
+        public static void SubirViajes(string idcliente, TextBox txtRuta)
+        {
+            OpenFileDialog abrir = new OpenFileDialog();
+            abrir.Filter = "Archivos|*.pdf;*.docx;*.xlsx;*.jpg";
+            abrir.Multiselect = true; // 🔥 permite varios archivos
+
+            if (abrir.ShowDialog() == DialogResult.OK)
+            {
+                DialogResult respuesta = MessageBox.Show(
+                    "¿Desea guardar estos documentos de viajes?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    string escritorio = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                    string rutaBase = Path.Combine(escritorio, "DocumentosClientes");
+                    Directory.CreateDirectory(rutaBase);
+
+                    string carpetaCliente = Path.Combine(rutaBase, idcliente);
+                    Directory.CreateDirectory(carpetaCliente);
+
+                    // 🔥 CARPETA DE VIAJES
+                    string carpetaViajes = Path.Combine(carpetaCliente, "Viajes");
+                    Directory.CreateDirectory(carpetaViajes);
+
+                    StringBuilder rutas = new StringBuilder();
+
+                    foreach (string archivo in abrir.FileNames)
+                    {
+                        string nombreArchivo = Path.GetFileName(archivo);
+                        string destino = Path.Combine(carpetaViajes, nombreArchivo);
+
+                        File.Copy(archivo, destino, true);
+
+                        rutas.AppendLine(destino);
+                    }
+
+                    // Mostrar rutas en textbox
+                    txtRuta.Text = rutas.ToString();
+
+                    MessageBox.Show("Documentos de viajes guardados correctamente ✈️");
+                }
+            }
+        }
         public static void GuardarCapacitacion(string idCliente, string rutaArchivoOrigen)
         { /*
             try

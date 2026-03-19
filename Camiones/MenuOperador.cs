@@ -28,13 +28,20 @@ namespace Camiones
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+        VerOperador vo = new VerOperador();
+            vo.Show();
         }
 
         private void btnNuevaCapacitacion_Click(object sender, EventArgs e)
         {
-            NuevaCapacitacion nc = new NuevaCapacitacion(); 
+            NuevaCapacitacion nc = new NuevaCapacitacion();
             nc.Show();
+        }
+
+        private void btnNuevoViaje_Click(object sender, EventArgs e)
+        {
+            NuevoViaje nv = new NuevoViaje();
+            nv.Show();
         }
     }
 }

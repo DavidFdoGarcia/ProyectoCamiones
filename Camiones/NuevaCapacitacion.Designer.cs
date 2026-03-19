@@ -30,12 +30,10 @@
         {
             label1 = new Label();
             txtID = new TextBox();
-            pictureBox1 = new PictureBox();
             btnCapacitacion = new Button();
             txtCap = new TextBox();
             txtNumero = new TextBox();
             label2 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnSalir
@@ -59,15 +57,6 @@
             txtID.Name = "txtID";
             txtID.Size = new Size(100, 23);
             txtID.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(12, 129);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(132, 77);
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
-            pictureBox1.Visible = false;
             // 
             // btnCapacitacion
             // 
@@ -114,7 +103,6 @@
             Controls.Add(label2);
             Controls.Add(txtCap);
             Controls.Add(btnCapacitacion);
-            Controls.Add(pictureBox1);
             Controls.Add(txtID);
             Controls.Add(label1);
             Name = "NuevaCapacitacion";
@@ -122,13 +110,11 @@
             Load += NuevaCapacitacion_Load;
             Controls.SetChildIndex(label1, 0);
             Controls.SetChildIndex(txtID, 0);
-            Controls.SetChildIndex(pictureBox1, 0);
             Controls.SetChildIndex(btnCapacitacion, 0);
             Controls.SetChildIndex(txtCap, 0);
             Controls.SetChildIndex(btnSalir, 0);
             Controls.SetChildIndex(label2, 0);
             Controls.SetChildIndex(txtNumero, 0);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -137,7 +123,6 @@
 
         private Label label1;
         private TextBox txtID;
-        private PictureBox pictureBox1;
         private Button btnCapacitacion;
         private TextBox txtCap;
         private TextBox txtNumero;

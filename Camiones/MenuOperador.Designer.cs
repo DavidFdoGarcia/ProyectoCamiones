@@ -69,15 +69,16 @@
             btnNuevoViaje.TabIndex = 3;
             btnNuevoViaje.Text = "Nuevo Viaje";
             btnNuevoViaje.UseVisualStyleBackColor = true;
+            btnNuevoViaje.Click += btnNuevoViaje_Click;
             // 
             // button1
             // 
             button1.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(157, 246);
             button1.Name = "button1";
-            button1.Size = new Size(75, 51);
+            button1.Size = new Size(87, 61);
             button1.TabIndex = 4;
-            button1.Text = "Reportes Operador";
+            button1.Text = "Consultar Operador";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
