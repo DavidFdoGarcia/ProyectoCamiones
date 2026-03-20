@@ -25,5 +25,11 @@ namespace Camiones.formMantenimientos
             MantenimientoCamiones MC = new MantenimientoCamiones();
             MC.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ConsultaFactura CF = new ConsultaFactura();
+            CF.Show();
+        }
     }
 }

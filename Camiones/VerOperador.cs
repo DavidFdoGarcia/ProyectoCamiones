@@ -100,7 +100,8 @@ namespace Camiones
                 bool contrato = Convert.ToBoolean(dt.Rows[0]["contratolaboral"]);
                 rbContratoSi.Checked = contrato;
                 rbContratoNo.Checked = !contrato;
-
+                txtCapacitaciones.Text = dt.Rows[0]["capacitaciones"].ToString();
+                txtViajes.Text = dt.Rows[0]["viajes"].ToString();
 
             }
             else
@@ -159,6 +160,9 @@ namespace Camiones
                                 innerColumn.Item().Text($"Licencia: {txtLicencia.Text}");
                                 innerColumn.Item().Text($"Antidoping: {resultadoAntidoping}");
                                 innerColumn.Item().Text($"Contrato Laboral: {resultadoContrato}");
+                                innerColumn.Item().Text($"Capacitaciones: {txtCapacitaciones.Text}");
+                                innerColumn.Item().Text($"Viajes Realizados: {txtViajes.Text}");
+
 
                             });
 

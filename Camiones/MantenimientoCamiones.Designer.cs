@@ -54,11 +54,27 @@
             txtParabrisas = new TextBox();
             txtSoldaduras = new TextBox();
             btnInsertar = new Button();
+            btnFactura = new Button();
+            label13 = new Label();
+            txtID = new TextBox();
+            label14 = new Label();
+            label15 = new Label();
+            txtCostoCarrocerias = new TextBox();
+            txtCostoTransmicion = new TextBox();
+            txtCostosFlechas = new TextBox();
+            txtCostosRetenes = new TextBox();
+            txtCostoLlantas = new TextBox();
+            txtCostoSoldadura = new TextBox();
+            txtCostoParabrisas = new TextBox();
+            txtCostoMotor = new TextBox();
+            label16 = new Label();
+            txtTotal = new TextBox();
             SuspendLayout();
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(905, 482);
+            btnSalir.Location = new Point(810, 108);
+            btnSalir.Size = new Size(84, 35);
             // 
             // cmbCamion
             // 
@@ -100,7 +116,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(28, 147);
+            label3.Location = new Point(28, 171);
             label3.Name = "label3";
             label3.Size = new Size(70, 23);
             label3.TabIndex = 4;
@@ -110,7 +126,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(28, 201);
+            label4.Location = new Point(34, 125);
             label4.Name = "label4";
             label4.Size = new Size(64, 23);
             label4.TabIndex = 5;
@@ -130,7 +146,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(28, 241);
+            label6.Location = new Point(28, 255);
             label6.Name = "label6";
             label6.Size = new Size(70, 23);
             label6.TabIndex = 7;
@@ -160,7 +176,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(605, 147);
+            label9.Location = new Point(583, 278);
             label9.Name = "label9";
             label9.Size = new Size(61, 23);
             label9.TabIndex = 10;
@@ -180,7 +196,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(605, 310);
+            label11.Location = new Point(583, 441);
             label11.Name = "label11";
             label11.Size = new Size(110, 23);
             label11.TabIndex = 12;
@@ -190,7 +206,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(605, 216);
+            label12.Location = new Point(583, 347);
             label12.Name = "label12";
             label12.Size = new Size(105, 23);
             label12.TabIndex = 13;
@@ -203,89 +219,226 @@
             // 
             // dtFecha
             // 
-            dtFecha.Location = new Point(153, 201);
+            dtFecha.Location = new Point(127, 125);
             dtFecha.Name = "dtFecha";
-            dtFecha.Size = new Size(200, 23);
+            dtFecha.Size = new Size(223, 23);
             dtFecha.TabIndex = 14;
             // 
             // txtPlacas
             // 
-            txtPlacas.Location = new Point(163, 150);
+            txtPlacas.Location = new Point(127, 174);
             txtPlacas.Name = "txtPlacas";
-            txtPlacas.Size = new Size(190, 23);
+            txtPlacas.Size = new Size(208, 23);
             txtPlacas.TabIndex = 15;
             // 
             // txtLlantas
             // 
             txtLlantas.Location = new Point(186, 244);
             txtLlantas.Name = "txtLlantas";
-            txtLlantas.Size = new Size(190, 23);
+            txtLlantas.Size = new Size(69, 23);
             txtLlantas.TabIndex = 16;
             // 
             // txtRetenes
             // 
             txtRetenes.Location = new Point(186, 295);
             txtRetenes.Name = "txtRetenes";
-            txtRetenes.Size = new Size(190, 23);
+            txtRetenes.Size = new Size(69, 23);
             txtRetenes.TabIndex = 17;
             // 
             // txtFlechas
             // 
             txtFlechas.Location = new Point(186, 350);
             txtFlechas.Name = "txtFlechas";
-            txtFlechas.Size = new Size(190, 23);
+            txtFlechas.Size = new Size(69, 23);
             txtFlechas.TabIndex = 18;
             // 
             // txtTransmicion
             // 
             txtTransmicion.Location = new Point(186, 409);
             txtTransmicion.Name = "txtTransmicion";
-            txtTransmicion.Size = new Size(190, 23);
+            txtTransmicion.Size = new Size(69, 23);
             txtTransmicion.TabIndex = 19;
             // 
             // txtCarroocerias
             // 
             txtCarroocerias.Location = new Point(186, 482);
             txtCarroocerias.Name = "txtCarroocerias";
-            txtCarroocerias.Size = new Size(190, 23);
+            txtCarroocerias.Size = new Size(69, 23);
             txtCarroocerias.TabIndex = 20;
             // 
             // txtMotor
             // 
-            txtMotor.Location = new Point(730, 147);
+            txtMotor.Location = new Point(708, 278);
             txtMotor.Name = "txtMotor";
-            txtMotor.Size = new Size(190, 23);
+            txtMotor.Size = new Size(63, 23);
             txtMotor.TabIndex = 21;
             // 
             // txtParabrisas
             // 
-            txtParabrisas.Location = new Point(741, 219);
+            txtParabrisas.Location = new Point(719, 350);
             txtParabrisas.Name = "txtParabrisas";
-            txtParabrisas.Size = new Size(190, 23);
+            txtParabrisas.Size = new Size(52, 23);
             txtParabrisas.TabIndex = 22;
             // 
             // txtSoldaduras
             // 
-            txtSoldaduras.Location = new Point(761, 310);
+            txtSoldaduras.Location = new Point(739, 441);
             txtSoldaduras.Name = "txtSoldaduras";
-            txtSoldaduras.Size = new Size(190, 23);
+            txtSoldaduras.Size = new Size(60, 23);
             txtSoldaduras.TabIndex = 23;
             // 
             // btnInsertar
             // 
-            btnInsertar.Location = new Point(730, 383);
+            btnInsertar.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnInsertar.Location = new Point(687, 67);
             btnInsertar.Name = "btnInsertar";
-            btnInsertar.Size = new Size(75, 23);
+            btnInsertar.Size = new Size(84, 38);
             btnInsertar.TabIndex = 24;
-            btnInsertar.Text = "button1";
+            btnInsertar.Text = "Insertar";
             btnInsertar.UseVisualStyleBackColor = true;
             btnInsertar.Click += btnInsertar_Click;
+            // 
+            // btnFactura
+            // 
+            btnFactura.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnFactura.Location = new Point(690, 133);
+            btnFactura.Name = "btnFactura";
+            btnFactura.Size = new Size(81, 61);
+            btnFactura.TabIndex = 25;
+            btnFactura.Text = "Generar Factura";
+            btnFactura.UseVisualStyleBackColor = true;
+            btnFactura.Click += btnFactura_Click;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.Location = new Point(655, 28);
+            label13.Name = "label13";
+            label13.Size = new Size(180, 23);
+            label13.TabIndex = 26;
+            label13.Text = "Numero de Factura";
+            // 
+            // txtID
+            // 
+            txtID.Location = new Point(860, 25);
+            txtID.Name = "txtID";
+            txtID.Size = new Size(91, 23);
+            txtID.TabIndex = 27;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.Location = new Point(301, 200);
+            label14.Name = "label14";
+            label14.Size = new Size(156, 23);
+            label14.TabIndex = 28;
+            label14.Text = "Costos Unitarios";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Location = new Point(810, 213);
+            label15.Name = "label15";
+            label15.Size = new Size(156, 23);
+            label15.TabIndex = 29;
+            label15.Text = "Costos Unitarios";
+            // 
+            // txtCostoCarrocerias
+            // 
+            txtCostoCarrocerias.Location = new Point(333, 485);
+            txtCostoCarrocerias.Name = "txtCostoCarrocerias";
+            txtCostoCarrocerias.Size = new Size(69, 23);
+            txtCostoCarrocerias.TabIndex = 34;
+            // 
+            // txtCostoTransmicion
+            // 
+            txtCostoTransmicion.Location = new Point(333, 412);
+            txtCostoTransmicion.Name = "txtCostoTransmicion";
+            txtCostoTransmicion.Size = new Size(69, 23);
+            txtCostoTransmicion.TabIndex = 33;
+            // 
+            // txtCostosFlechas
+            // 
+            txtCostosFlechas.Location = new Point(333, 353);
+            txtCostosFlechas.Name = "txtCostosFlechas";
+            txtCostosFlechas.Size = new Size(69, 23);
+            txtCostosFlechas.TabIndex = 32;
+            // 
+            // txtCostosRetenes
+            // 
+            txtCostosRetenes.Location = new Point(333, 298);
+            txtCostosRetenes.Name = "txtCostosRetenes";
+            txtCostosRetenes.Size = new Size(69, 23);
+            txtCostosRetenes.TabIndex = 31;
+            // 
+            // txtCostoLlantas
+            // 
+            txtCostoLlantas.Location = new Point(333, 247);
+            txtCostoLlantas.Name = "txtCostoLlantas";
+            txtCostoLlantas.Size = new Size(69, 23);
+            txtCostoLlantas.TabIndex = 30;
+            // 
+            // txtCostoSoldadura
+            // 
+            txtCostoSoldadura.Location = new Point(860, 444);
+            txtCostoSoldadura.Name = "txtCostoSoldadura";
+            txtCostoSoldadura.Size = new Size(60, 23);
+            txtCostoSoldadura.TabIndex = 37;
+            // 
+            // txtCostoParabrisas
+            // 
+            txtCostoParabrisas.Location = new Point(871, 350);
+            txtCostoParabrisas.Name = "txtCostoParabrisas";
+            txtCostoParabrisas.Size = new Size(52, 23);
+            txtCostoParabrisas.TabIndex = 36;
+            // 
+            // txtCostoMotor
+            // 
+            txtCostoMotor.Location = new Point(860, 278);
+            txtCostoMotor.Name = "txtCostoMotor";
+            txtCostoMotor.Size = new Size(63, 23);
+            txtCostoMotor.TabIndex = 35;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label16.Location = new Point(583, 501);
+            label16.Name = "label16";
+            label16.Size = new Size(133, 23);
+            label16.TabIndex = 38;
+            label16.Text = "Calcular Total";
+            // 
+            // txtTotal
+            // 
+            txtTotal.Location = new Point(775, 501);
+            txtTotal.Name = "txtTotal";
+            txtTotal.Size = new Size(60, 23);
+            txtTotal.TabIndex = 39;
             // 
             // MantenimientoCamiones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1196, 652);
+            ClientSize = new Size(977, 553);
+            Controls.Add(txtTotal);
+            Controls.Add(label16);
+            Controls.Add(txtCostoSoldadura);
+            Controls.Add(txtCostoParabrisas);
+            Controls.Add(txtCostoMotor);
+            Controls.Add(txtCostoCarrocerias);
+            Controls.Add(txtCostoTransmicion);
+            Controls.Add(txtCostosFlechas);
+            Controls.Add(txtCostosRetenes);
+            Controls.Add(txtCostoLlantas);
+            Controls.Add(label15);
+            Controls.Add(label14);
+            Controls.Add(txtID);
+            Controls.Add(label13);
+            Controls.Add(btnFactura);
             Controls.Add(btnInsertar);
             Controls.Add(txtSoldaduras);
             Controls.Add(txtParabrisas);
@@ -339,7 +492,22 @@
             Controls.SetChildIndex(txtParabrisas, 0);
             Controls.SetChildIndex(txtSoldaduras, 0);
             Controls.SetChildIndex(btnInsertar, 0);
+            Controls.SetChildIndex(btnFactura, 0);
+            Controls.SetChildIndex(label13, 0);
+            Controls.SetChildIndex(txtID, 0);
+            Controls.SetChildIndex(label14, 0);
+            Controls.SetChildIndex(label15, 0);
+            Controls.SetChildIndex(txtCostoLlantas, 0);
+            Controls.SetChildIndex(txtCostosRetenes, 0);
+            Controls.SetChildIndex(txtCostosFlechas, 0);
+            Controls.SetChildIndex(txtCostoTransmicion, 0);
+            Controls.SetChildIndex(txtCostoCarrocerias, 0);
+            Controls.SetChildIndex(txtCostoMotor, 0);
+            Controls.SetChildIndex(txtCostoParabrisas, 0);
+            Controls.SetChildIndex(txtCostoSoldadura, 0);
+            Controls.SetChildIndex(label16, 0);
             Controls.SetChildIndex(btnSalir, 0);
+            Controls.SetChildIndex(txtTotal, 0);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -372,5 +540,20 @@
         private TextBox txtParabrisas;
         private TextBox txtSoldaduras;
         private Button btnInsertar;
+        private Button btnFactura;
+        private Label label13;
+        private TextBox txtID;
+        private Label label14;
+        private Label label15;
+        private TextBox txtCostoCarrocerias;
+        private TextBox txtCostoTransmicion;
+        private TextBox txtCostosFlechas;
+        private TextBox txtCostosRetenes;
+        private TextBox txtCostoLlantas;
+        private TextBox txtCostoSoldadura;
+        private TextBox txtCostoParabrisas;
+        private TextBox txtCostoMotor;
+        private Label label16;
+        private TextBox txtTotal;
     }
 }

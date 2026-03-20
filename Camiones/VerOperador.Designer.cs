@@ -59,6 +59,10 @@
             label11 = new Label();
             btnConsultar = new Button();
             btnGenerar = new Button();
+            label12 = new Label();
+            label13 = new Label();
+            txtViajes = new TextBox();
+            txtCapacitaciones = new TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -364,11 +368,49 @@
             btnGenerar.UseVisualStyleBackColor = true;
             btnGenerar.Click += btnGenerar_Click;
             // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Location = new Point(25, 657);
+            label12.Name = "label12";
+            label12.Size = new Size(144, 19);
+            label12.TabIndex = 24;
+            label12.Text = "Viajes Realizados";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.Location = new Point(22, 622);
+            label13.Name = "label13";
+            label13.Size = new Size(127, 19);
+            label13.TabIndex = 25;
+            label13.Text = "Capacitaciones";
+            // 
+            // txtViajes
+            // 
+            txtViajes.Location = new Point(197, 657);
+            txtViajes.Name = "txtViajes";
+            txtViajes.Size = new Size(59, 23);
+            txtViajes.TabIndex = 26;
+            // 
+            // txtCapacitaciones
+            // 
+            txtCapacitaciones.Location = new Point(197, 618);
+            txtCapacitaciones.Name = "txtCapacitaciones";
+            txtCapacitaciones.Size = new Size(59, 23);
+            txtCapacitaciones.TabIndex = 27;
+            // 
             // VerOperador
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(799, 636);
+            ClientSize = new Size(825, 685);
+            Controls.Add(txtCapacitaciones);
+            Controls.Add(txtViajes);
+            Controls.Add(label13);
+            Controls.Add(label12);
             Controls.Add(btnGenerar);
             Controls.Add(btnConsultar);
             Controls.Add(label11);
@@ -423,6 +465,10 @@
             Controls.SetChildIndex(label11, 0);
             Controls.SetChildIndex(btnConsultar, 0);
             Controls.SetChildIndex(btnGenerar, 0);
+            Controls.SetChildIndex(label12, 0);
+            Controls.SetChildIndex(label13, 0);
+            Controls.SetChildIndex(txtViajes, 0);
+            Controls.SetChildIndex(txtCapacitaciones, 0);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -467,5 +513,9 @@
         private Label label11;
         private Button btnConsultar;
         private Button btnGenerar;
+        private Label label12;
+        private Label label13;
+        private TextBox txtViajes;
+        private TextBox txtCapacitaciones;
     }
 }

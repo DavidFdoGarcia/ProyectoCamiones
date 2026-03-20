@@ -15,38 +15,71 @@ namespace Camiones
         {
             InitializeComponent();
         }
-
-        private void MantenimientoCamiones_Load(object sender, EventArgs e)
+        // 🔥 AQUÍ DECLARAS EL MÉTODO
+        decimal ObtenerValor(string texto)
         {
-            // --- COMBO OPERADOR ---
-            DataTable dtOperador = Camiones.clases.Operador.ObtenerOperadores();
-
-            DataRow filaOperador = dtOperador.NewRow();
-            filaOperador["idoperador"] = 0;
-            filaOperador["NombreCompleto"] = "--Seleccione un operador--";
-            dtOperador.Rows.InsertAt(filaOperador, 0);
-
-            cmbOperador.DataSource = dtOperador;
-            cmbOperador.DisplayMember = "NombreCompleto";
-            cmbOperador.ValueMember = "idoperador";
-            cmbOperador.SelectedIndex = 0;
-
-            // --- COMBO CAMIÓN ---
-            DataTable dtCamion = Camiones.clases.Operador.ObtenerCamiones();
-
-            DataRow filaCamion = dtCamion.NewRow();
-            filaCamion["idcamion"] = 0;
-            filaCamion["tipocamion"] = "--Seleccione un camión--";
-            dtCamion.Rows.InsertAt(filaCamion, 0);
-
-            cmbCamion.DataSource = dtCamion;
-            cmbCamion.DisplayMember = "tipocamion";
-            cmbCamion.ValueMember = "idcamion";
-            cmbCamion.SelectedIndex = 0;
+            decimal valor;
+            if (decimal.TryParse(texto, out valor))
+                return valor;
+            else
+                return 0;
         }
 
-    
-            private void btnInsertar_Click(object sender, EventArgs e)
+        // 🔥 FUNCIÓN DEL TOTAL
+        decimal CalcularTotal()
+        {
+            decimal total = 0;
+
+            total += ObtenerValor(txtLlantas.Text) * ObtenerValor(txtCostoLlantas.Text);
+            total += ObtenerValor(txtRetenes.Text) * ObtenerValor(txtCostosRetenes.Text);
+            total += ObtenerValor(txtFlechas.Text) * ObtenerValor(txtCostosFlechas.Text);
+            total += ObtenerValor(txtTransmicion.Text) * ObtenerValor(txtCostoTransmicion.Text);
+            total += ObtenerValor(txtCarroocerias.Text) * ObtenerValor(txtCostoCarrocerias.Text);
+            total += ObtenerValor(txtParabrisas.Text) * ObtenerValor(txtCostoParabrisas.Text);
+            total += ObtenerValor(txtSoldaduras.Text) * ObtenerValor(txtCostoSoldadura.Text);
+            total += ObtenerValor(txtMotor.Text) * ObtenerValor(txtCostoMotor.Text);
+
+            return total;
+        }
+        private void RecalcularTotal(object sender, EventArgs e)
+        {
+            txtTotal.Text = CalcularTotal().ToString("0.00");
+        }
+
+        // 🔥 BOTÓN FACTURA
+        private void btnFactura_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idMantenimiento = Convert.ToInt32(txtID.Text);
+
+                string queryFactura = @"
+        INSERT INTO factura (idmantenimiento, idoperador, fecha, total)
+        VALUES (@idmantenimiento, @idoperador, @fecha, @total);
+        ";
+
+                var parametros = new Dictionary<string, object>()
+        {
+            { "@idmantenimiento", idMantenimiento },
+            { "@idoperador", Convert.ToInt32(cmbOperador.SelectedValue) },
+            { "@fecha", DateTime.Now },
+            { "@total", Convert.ToDecimal(txtTotal.Text) }
+        };
+
+                Consultas.Ejecutar(queryFactura, parametros);
+
+                MessageBox.Show("Factura generada correctamente", "Éxito",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void btnInsertar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -75,19 +108,89 @@ namespace Camiones
             { "@idoperador", Convert.ToInt32(cmbOperador.SelectedValue) }
         };
 
+
+
                 object resultado = Consultas.EjecutarEscalar(query, parametros);
 
-                int idGenerado = Convert.ToInt32(resultado);
+                if (resultado != null)
+                {
+                    int idGenerado = Convert.ToInt32(resultado);
 
-              //  txtIDMantenimiento.Text = idGenerado.ToString();
+                    txtID.Text = idGenerado.ToString();
+
+                    MessageBox.Show($"Mantenimiento guardado correctamente. ID: {idGenerado}");
+
+                    // 👉 AQUÍ YA PUEDES USAR EL ID PARA FACTURA
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo obtener el ID generado");
+                }
+
+                //  txtIDMantenimiento.Text = idGenerado.ToString();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
-           // txtIDMantenimiento.Enabled = false;
+            // txtIDMantenimiento.Enabled = false;
+        }
+
+        private void MantenimientoCamiones_Load(object sender, EventArgs e)
+        {
+            txtLlantas.TextChanged += RecalcularTotal;
+            txtCostoLlantas.TextChanged += RecalcularTotal;
+
+            txtRetenes.TextChanged += RecalcularTotal;
+            txtCostosRetenes.TextChanged += RecalcularTotal;
+
+            txtFlechas.TextChanged += RecalcularTotal;
+            txtCostosFlechas.TextChanged += RecalcularTotal;
+
+            txtTransmicion.TextChanged += RecalcularTotal;
+            txtCostoTransmicion.TextChanged += RecalcularTotal;
+
+            txtCarroocerias.TextChanged += RecalcularTotal;
+            txtCostoCarrocerias.TextChanged += RecalcularTotal;
+
+            txtParabrisas.TextChanged += RecalcularTotal;
+            txtCostoParabrisas.TextChanged += RecalcularTotal;
+
+            txtSoldaduras.TextChanged += RecalcularTotal;
+            txtCostoSoldadura.TextChanged += RecalcularTotal;
+
+            txtMotor.TextChanged += RecalcularTotal;
+            txtCostoMotor.TextChanged += RecalcularTotal;
+
+
+            // --- COMBO OPERADOR ---
+            DataTable dtOperador = Camiones.clases.Operador.ObtenerOperadores();
+
+            DataRow filaOperador = dtOperador.NewRow();
+            filaOperador["idoperador"] = 0;
+            filaOperador["NombreCompleto"] = "--Seleccione un operador--";
+            dtOperador.Rows.InsertAt(filaOperador, 0);
+
+            cmbOperador.DataSource = dtOperador;
+            cmbOperador.DisplayMember = "NombreCompleto";
+            cmbOperador.ValueMember = "idoperador";
+            cmbOperador.SelectedIndex = 0;
+
+            // --- COMBO CAMIÓN ---
+            DataTable dtCamion = Camiones.clases.Operador.ObtenerCamiones();
+
+            DataRow filaCamion = dtCamion.NewRow();
+            filaCamion["idcamion"] = 0;
+            filaCamion["tipocamion"] = "--Seleccione un camión--";
+            dtCamion.Rows.InsertAt(filaCamion, 0);
+
+            cmbCamion.DataSource = dtCamion;
+            cmbCamion.DisplayMember = "tipocamion";
+            cmbCamion.ValueMember = "idcamion";
+            cmbCamion.SelectedIndex = 0;
         }
     }
-    
+
+
 }

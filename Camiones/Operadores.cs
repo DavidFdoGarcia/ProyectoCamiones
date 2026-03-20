@@ -31,13 +31,13 @@ namespace Camiones
 
         private void btnLicencia_Click(object sender, EventArgs e)
         {
-            
+
         }
 
 
         private void btnApto_Click(object sender, EventArgs e)
         {
-   
+
         }
 
         private void btnComprobante_Click(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace Camiones
 
         private void btnCURP_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnAnti_Click(object sender, EventArgs e)
@@ -61,12 +61,12 @@ namespace Camiones
 
         private void btnContrato_Click(object sender, EventArgs e)
         {
-         
+
         }
 
         private void btnCapacitaciones_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnViajes_Click(object sender, EventArgs e)
@@ -81,7 +81,7 @@ namespace Camiones
 
         private void rdbAntiSI_CheckedChanged(object sender, EventArgs e)
         {
-        
+
         }
 
 
@@ -90,13 +90,13 @@ namespace Camiones
 
         }
 
-       
+
 
 
 
         private void rbLicenciaSI_CheckedChanged(object sender, EventArgs e)
         {
-      
+
         }
 
         private void rbdAptoSI_CheckedChanged(object sender, EventArgs e)
@@ -125,18 +125,18 @@ namespace Camiones
 
         }
 
-       
+
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
 
         }
 
-     
+
 
         private void button1_Click(object sender, EventArgs e)  //boton select
         {
-           
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -173,7 +173,7 @@ namespace Camiones
             { "@curp", TXTcurp.Text },
             { "@antidoping", anti },
             { "@contratolaboral", contrato },
-            
+
         };
 
                 // 🔥 AQUÍ obtienes el ID
@@ -183,6 +183,10 @@ namespace Camiones
 
                 // 👉 LO PONES EN EL TEXTBOX
                 txtID.Text = idGenerado.ToString();
+
+
+                // ✅ MENSAJE DE CONFIRMACIÓN
+                MessageBox.Show("Operador insertado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -202,9 +206,9 @@ namespace Camiones
 
         }
 
-    
 
-       
+
+
 
         private void btnContrato_Click_1(object sender, EventArgs e)
         {
@@ -213,7 +217,7 @@ namespace Camiones
 
         private void rbContratoSI_CheckedChanged(object sender, EventArgs e)
         {
-   
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -233,7 +237,11 @@ namespace Camiones
             DocumentoOperador frm = new DocumentoOperador(id);
             frm.Show();
         }
-        
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

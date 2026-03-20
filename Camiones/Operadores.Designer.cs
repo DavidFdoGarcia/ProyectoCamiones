@@ -41,7 +41,6 @@
             lblCURP = new Label();
             lblCondiciones = new Label();
             openFileDialog1 = new OpenFileDialog();
-            txtID = new TextBox();
             rbAntiSI = new RadioButton();
             lblAnti = new Label();
             rbContratoNO = new RadioButton();
@@ -59,9 +58,8 @@
             TXTcurp = new TextBox();
             txtDomicilio = new TextBox();
             btnInserta = new Button();
-            label1 = new Label();
-            btnReporte = new Button();
             button1 = new Button();
+            txtID = new TextBox();
             txtLicencia = new TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -71,7 +69,7 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(714, 474);
+            btnSalir.Location = new Point(714, 464);
             btnSalir.Margin = new Padding(4, 5, 4, 5);
             btnSalir.Size = new Size(98, 48);
             // 
@@ -198,14 +196,6 @@
             // openFileDialog1
             // 
             openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // txtID
-            // 
-            txtID.Enabled = false;
-            txtID.Location = new Point(264, 9);
-            txtID.Name = "txtID";
-            txtID.Size = new Size(50, 23);
-            txtID.TabIndex = 33;
             // 
             // rbAntiSI
             // 
@@ -369,7 +359,7 @@
             // btnInserta
             // 
             btnInserta.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnInserta.Location = new Point(716, 282);
+            btnInserta.Location = new Point(716, 333);
             btnInserta.Name = "btnInserta";
             btnInserta.Size = new Size(96, 47);
             btnInserta.TabIndex = 69;
@@ -377,31 +367,10 @@
             btnInserta.UseVisualStyleBackColor = true;
             btnInserta.Click += btnInserta_Click;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(35, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(183, 25);
-            label1.TabIndex = 70;
-            label1.Text = "Número del Operador";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // btnReporte
-            // 
-            btnReporte.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnReporte.Location = new Point(716, 342);
-            btnReporte.Name = "btnReporte";
-            btnReporte.Size = new Size(96, 47);
-            btnReporte.TabIndex = 76;
-            btnReporte.Text = "Reporte";
-            btnReporte.UseVisualStyleBackColor = true;
-           
             // button1
             // 
             button1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(695, 408);
+            button1.Location = new Point(695, 400);
             button1.Name = "button1";
             button1.Size = new Size(117, 47);
             button1.TabIndex = 77;
@@ -409,11 +378,18 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click_2;
             // 
+            // txtID
+            // 
+            txtID.Location = new Point(154, 12);
+            txtID.Name = "txtID";
+            txtID.Size = new Size(455, 23);
+            txtID.TabIndex = 78;
+            // 
             // txtLicencia
             // 
-            txtLicencia.Location = new Point(502, 171);
+            txtLicencia.Location = new Point(426, 162);
             txtLicencia.Name = "txtLicencia";
-            txtLicencia.Size = new Size(216, 23);
+            txtLicencia.Size = new Size(244, 23);
             txtLicencia.TabIndex = 79;
             // 
             // Operadores
@@ -424,9 +400,8 @@
             BackgroundImage = Properties.Resources.istockphoto_1465157700_612x612;
             ClientSize = new Size(837, 552);
             Controls.Add(txtLicencia);
+            Controls.Add(txtID);
             Controls.Add(button1);
-            Controls.Add(btnReporte);
-            Controls.Add(label1);
             Controls.Add(btnInserta);
             Controls.Add(txtDomicilio);
             Controls.Add(TXTcurp);
@@ -435,7 +410,6 @@
             Controls.Add(panel2);
             Controls.Add(panel6);
             Controls.Add(panel1);
-            Controls.Add(txtID);
             Controls.Add(lblCondiciones);
             Controls.Add(lblCURP);
             Controls.Add(lblAnti);
@@ -466,7 +440,6 @@
             Controls.SetChildIndex(lblAnti, 0);
             Controls.SetChildIndex(lblCURP, 0);
             Controls.SetChildIndex(lblCondiciones, 0);
-            Controls.SetChildIndex(txtID, 0);
             Controls.SetChildIndex(panel1, 0);
             Controls.SetChildIndex(panel6, 0);
             Controls.SetChildIndex(panel2, 0);
@@ -475,10 +448,9 @@
             Controls.SetChildIndex(TXTcurp, 0);
             Controls.SetChildIndex(txtDomicilio, 0);
             Controls.SetChildIndex(btnInserta, 0);
-            Controls.SetChildIndex(label1, 0);
-            Controls.SetChildIndex(btnReporte, 0);
             Controls.SetChildIndex(button1, 0);
             Controls.SetChildIndex(btnSalir, 0);
+            Controls.SetChildIndex(txtID, 0);
             Controls.SetChildIndex(txtLicencia, 0);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -507,7 +479,6 @@
         private Label lblCURP;
         private Label lblCondiciones;
         private OpenFileDialog openFileDialog1;
-        private TextBox txtID;
         private RadioButton rbAntiSI;
         private Label lblAnti;
         private RadioButton rbContratoNO;
@@ -525,9 +496,8 @@
         private TextBox txtDomicilio;
         private Button btnInserta;
         private RadioButton rbAntiNO;
-        private Label label1;
-        private Button btnReporte;
         private Button button1;
+        private TextBox txtID;
         private TextBox txtLicencia;
     }
 }
